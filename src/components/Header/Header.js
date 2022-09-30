@@ -31,13 +31,18 @@ const Header = ({props}) => {
             <div className="navbars">
                 {
                     props.map((item, index) => (
-                        <HEADER_NavLink to={item.url} key={index} flag={item.flag}>
-                            <img src={item.img}>
-                            </img>
-                            {
-                                item.content
-                            }
-                        </HEADER_NavLink>
+                        <div className="link-cont">
+                            <div className="link-wrapper">
+                                <HEADER_NavLink className='link hover-6' to={item.url} key={index} flag={item.flag}>
+                                    <img src={item.img}>
+                                    </img>
+                                    {
+                                        item.content
+                                    }
+                                </HEADER_NavLink>
+                            </div>
+                        </div>
+                        
                     ))
                 }
                 <LeftIconedBtn props={btnProps}></LeftIconedBtn>
@@ -45,6 +50,7 @@ const Header = ({props}) => {
                     <img src={IMG_RESPON}></img>
                 </ResponIcon>
             </div>
+
         </Wrapper>
     )
 }
@@ -64,6 +70,70 @@ const Wrapper = styled.div`
         justify-content: center;
         align-items: center;
         gap: 30px;
+
+
+        .link-cont {
+            position: relative;
+        }
+
+        .link {
+            position: relative;
+            text-decoration: none;
+            padding: 10px 0;
+            color: ${p => p.theme.fontColor};
+        }
+
+        .link-wrapper {
+            position: relative;
+            display: block;
+            padding: 20px 0;
+        }
+
+        .inner-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* hover styles */
+
+        .hover-6 {
+            &:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 50%;
+                height: 3px;
+                background-color: ${p => p.theme.themeColor1};
+                transform: scaleX(0);
+                transform-origin: bottom left;
+
+                transition: transform 0.3s;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left : 50%;
+                height: 3px;
+                background-color: ${p => p.theme.themeColor1};
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    transform: scaleX(1);
+                }
+
+                &:after {
+                    transform: scaleX(1);
+                }
+            }
+        }
     }
 `
 const HEADER_NavLink = styled(NavLink)`
