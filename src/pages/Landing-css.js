@@ -6,7 +6,7 @@ import IMG_GET_READY_FLY from '../assets/get-ready-fly.png';
 
 export const Wrapper = styled.div`
 
-    /* animation-name: backgroundColorPalette;
+    animation-name: backgroundColorPalette;
 	animation-duration: 10s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
@@ -28,7 +28,7 @@ export const Wrapper = styled.div`
         100% {
             background: #ff9b85;
         }
-    } */
+    }
 
     .landing-first {
         height: 100vh;

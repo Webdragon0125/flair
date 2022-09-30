@@ -12,6 +12,7 @@ import SelectSearch from "../components/SelectSearch/SelectSearch";
 import City from "../components/City/City";
 import Service from "../components/Services/Services";
 import Feedback from "../components/Feedbacks/Feedbacks";
+import Footer from "../components/Footer/Footer";
 
 // Styled-components 
 import {
@@ -155,6 +156,8 @@ const Landing = () => {
                 <h1>See what out customers are saying</h1>
                 <Feedback props = {CUSTOMERS}></Feedback>
             </div>
+
+            <Footer></Footer>
         </Wrapper>
     )
 }
