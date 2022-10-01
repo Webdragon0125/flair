@@ -1,13 +1,7 @@
 import React, { useEffect } from "react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 import styled, { css } from "styled-components";
 
 const LeftIconedBtn = ({ props }) => {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
   return (
     <CustomBtn colFlag={props.colFlag} displayFlag={props.displayFlag}>
       {props.content}

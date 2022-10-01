@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 import IMG_STAR from "../../assets/star.png";
 
@@ -18,13 +16,8 @@ import "./Feedbacks.css";
 import { Pagination, Navigation } from "swiper";
 
 export default function Feedback({ props }) {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
-
   return (
-    <Wrapper data-aos="fade-up" data-aos-anchor-placement="top-center">
+    <Wrapper data-aos="fade-up">
       <Swiper
         slidesPerView={3}
         spaceBetween={40}

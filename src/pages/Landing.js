@@ -1,9 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import AOS from "aos";
 import { DatePicker, Select } from "antd";
 import "antd/dist/antd.css";
-
-import "aos/dist/aos.css";
 
 import AppContext from "../context/context";
 
@@ -44,11 +41,6 @@ const Landing = () => {
   const { RangePicker } = DatePicker;
   const { Option } = Select;
 
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
-
   const AppContextProps = useContext(AppContext);
 
   const [startDate, setStartDate] = useState(new Date());
@@ -75,16 +67,7 @@ const Landing = () => {
         >
           <h1>Search for low prices on airfare and more</h1>
         </div>
-        <div
-          className="seperator"
-          data-aos="fade-right"
-          data-aos-duration="2000"
-        />
-        <div
-          className="seperator1"
-          data-aos="fade-left"
-          data-aos-duration="2000"
-        />
+        <div className="seperator" />
       </div>
       {/* <div className="search-search-div">
         <div className="main-container">
@@ -159,7 +142,7 @@ const Landing = () => {
 
       <div className="services">
         <p className="title">Services</p>
-        <div className="items" data-aos="flip-right" data-aos-duration="2000">
+        <div className="items" data-aos="zoom-out">
           {SERVICES.map((item, index) => (
             <Service
               key={index}
@@ -188,14 +171,7 @@ const Landing = () => {
       </WhereWeFly>
 
       <div className="feedbacks">
-        <p
-          className="title"
-          // data-aos="fade-left"
-          // data-aos-offset="500"
-          // data-aos-duration="500"
-        >
-          See what out customers are saying
-        </p>
+        <p className="title">See what out customers are saying</p>
         <Feedback props={CUSTOMERS}></Feedback>
       </div>
 

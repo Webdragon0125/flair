@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 // Images
 import IMG_LOGO from "../../assets/logo.png";
@@ -18,11 +16,6 @@ import { Wrapper, HEADER_NavLink, ResponIcon } from "./Header-css";
 import { HEADER } from "../../constant/HEADER";
 
 const Header = ({ props }) => {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
-
   const [respFlag, setRespFlag] = useState(false);
 
   const btnProps = {
@@ -40,10 +33,10 @@ const Header = ({ props }) => {
 
   return (
     <Wrapper respFlag={respFlag}>
-      <div className="logo" data-aos="fade-right" data-aos-duration="1500">
+      <div className="logo">
         <img src={IMG_LOGO}></img>
       </div>
-      <div className="navbars" data-aos="fade-left" data-aos-duration="1500">
+      <div className="navbars">
         {props.map((item, index) => (
           <div className="link-cont">
             <div className="link-wrapper">

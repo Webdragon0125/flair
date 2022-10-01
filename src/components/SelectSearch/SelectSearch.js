@@ -1,18 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Select } from "antd";
-import "antd/dist/antd.css";
-import AOS from "aos";
 import "aos/dist/aos.css";
 import styled from "styled-components";
 
 const CustomSelectSearch = ({ props }) => {
   const { Option } = Select;
-
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
-
   const [value, setValue] = useState("");
 
   return (
