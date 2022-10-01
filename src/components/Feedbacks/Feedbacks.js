@@ -17,7 +17,7 @@ import { Pagination, Navigation } from "swiper";
 
 export default function Feedback({ props }) {
   return (
-    <Wrapper data-aos="fade-up">
+    <Wrapper>
       <Swiper
         slidesPerView={3}
         spaceBetween={40}

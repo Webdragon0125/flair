@@ -1,9 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DatePicker, Select } from "antd";
+
 import "antd/dist/antd.css";
-
 import AppContext from "../context/context";
-
 import "react-datepicker/dist/react-datepicker.css";
 
 // Components
@@ -60,11 +59,7 @@ const Landing = () => {
       <div className="landing-first">
         <Inform />
         <Header props={HEADER} />
-        <div
-          className="search-for"
-          data-aos="fade-right"
-          data-aos-duration="1000"
-        >
+        <div className="search-for">
           <h1>Search for low prices on airfare and more</h1>
         </div>
         <div className="seperator" />
@@ -103,11 +98,7 @@ const Landing = () => {
         </div>
       </div> */}
 
-      <div
-        className="sun-of-beach"
-        data-aos="fade-up"
-        data-aos-anchor-placement="top-center"
-      >
+      <div className="sun-of-beach">
         <p className="title">Explore more deals</p>
         <img src={IMG_BACK1}></img>
       </div>
@@ -129,11 +120,7 @@ const Landing = () => {
       </div>
 
       <div className="get-ready-fly">
-        <div
-          className="get-ready-fly-content"
-          data-aos="fade-up"
-          data-aos-anchor-placement="top-center"
-        >
+        <div className="get-ready-fly-content">
           <h1>Get ready to fly!</h1>
           <h2>Here's some info on our jobs they are brand new!</h2>
           <button>View all</button>
@@ -142,7 +129,7 @@ const Landing = () => {
 
       <div className="services">
         <p className="title">Services</p>
-        <div className="items" data-aos="zoom-out">
+        <div className="items">
           {SERVICES.map((item, index) => (
             <Service
               key={index}
@@ -156,11 +143,7 @@ const Landing = () => {
         </div>
       </div>
       <WhereWeFly img={IMG_MAP}>
-        <div
-          className="content"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-        >
+        <div className="content">
           <h1>Where we fly</h1>
           <p>
             We are growing fast. With several exciting routes Flair files to
