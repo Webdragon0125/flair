@@ -40,6 +40,10 @@ export const Wrapper = styled.div`
       h1 {
         font-size: 20px;
         font-weight: 600;
+        color: white;
+        @media screen and (max-width: 450px) {
+          font-size: 15px;
+        }
       }
       .childs {
         margin-top: 20px;

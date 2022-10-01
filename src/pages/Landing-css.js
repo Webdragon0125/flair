@@ -46,8 +46,9 @@ export const Wrapper = styled.div`
     margin-left: auto;
     margin-right: auto;
 
-    @media screen and (max-width: 1100px) {
-      background-position: 30% 30%;
+    @media (max-width: 768px) {
+      background-size: auto 100%;
+      background-position: right;
     }
 
     width: 100%;
@@ -67,6 +68,9 @@ export const Wrapper = styled.div`
         color: #101010;
         @media screen and (max-width: 1130px) {
           font-size: 40px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 30px;
         }
       }
       ${(p) => {
@@ -296,7 +300,6 @@ export const Wrapper = styled.div`
 
         text-decoration: none;
         color: transparent;
-        font-family: sans-serif;
         letter-spacing: 5px;
         transition: all 0.5s;
         position: relative;
@@ -375,6 +378,9 @@ export const Wrapper = styled.div`
       width: 100%;
       font-size: 40px;
       font-weight: 700;
+      @media screen and (max-width: 768px) {
+        font-size: 30px;
+      }
     }
   }
 `;
@@ -417,10 +423,16 @@ export const WhereWeFly = styled.div`
       font-size: 40px;
       font-weight: 900;
       margin: 20px;
+      @media screen and (max-width: 400px) {
+        font-size: 25px;
+      }
     }
     p {
       font-size: 25px;
       margin: 20px;
+      @media screen and (max-width: 400px) {
+        font-size: 20px;
+      }
     }
 
     button {

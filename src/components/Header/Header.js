@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import styled, { css } from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -8,15 +7,23 @@ import "aos/dist/aos.css";
 import IMG_LOGO from "../../assets/logo.png";
 import IMG_RIGHT from "../../assets/right.png";
 import IMG_RESPON from "../../assets/responsive.png";
+import IMG_REMOVE from "../../assets/remove_inform.png";
 
 // Components
 import LeftIconedBtn from "../LeftIconedBtn/LeftIconedBtn";
+
+// Styled components
+import { Wrapper, HEADER_NavLink, ResponIcon } from "./Header-css";
+
+import { HEADER } from "../../constant/HEADER";
 
 const Header = ({ props }) => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
+
+  const [respFlag, setRespFlag] = useState(false);
 
   const btnProps = {
     content: "sign in",
@@ -25,8 +32,14 @@ const Header = ({ props }) => {
     displayFlag: 1,
   };
 
+  useEffect(() => {
+    respFlag
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "auto");
+  }, [respFlag]);
+
   return (
-    <Wrapper>
+    <Wrapper respFlag={respFlag}>
       <div className="logo" data-aos="fade-right" data-aos-duration="1500">
         <img src={IMG_LOGO}></img>
       </div>
@@ -47,132 +60,32 @@ const Header = ({ props }) => {
           </div>
         ))}
         <LeftIconedBtn props={btnProps}></LeftIconedBtn>
-        <ResponIcon>
+        <ResponIcon
+          onClick={() => {
+            setRespFlag(true);
+            console.log(respFlag);
+          }}
+        >
           <img src={IMG_RESPON}></img>
         </ResponIcon>
+      </div>
+      <div className="div-responsive">
+        <div className="content">
+          <img
+            className="remove"
+            src={IMG_REMOVE}
+            onClick={() => setRespFlag(false)}
+          ></img>
+          {HEADER.map((item, index) => (
+            <div className="index" key={index}>
+              <img src={item.img}></img>
+              {item.content}
+            </div>
+          ))}
+        </div>
       </div>
     </Wrapper>
   );
 };
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 50px;
-  .logo {
-    cursor: pointer;
-
-    img {
-      height: 30px;
-    }
-  }
-  .navbars {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-
-    .link-cont {
-      position: relative;
-    }
-
-    .link {
-      position: relative;
-      text-decoration: none;
-      padding: 10px 0;
-      color: ${(p) => p.theme.fontColor};
-    }
-
-    .link-wrapper {
-      position: relative;
-      display: block;
-      padding: 20px 0;
-    }
-
-    .inner-wrapper {
-      position: relative;
-      display: inline-block;
-    }
-
-    /* hover styles */
-
-    .hover-6 {
-      &:before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 50%;
-        height: 3px;
-        background-color: ${(p) => p.theme.themeColor1};
-        transform: scaleX(0);
-        transform-origin: bottom left;
-
-        transition: transform 0.3s;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 50%;
-        height: 3px;
-        background-color: ${(p) => p.theme.themeColor1};
-        transform: scaleX(0);
-        transform-origin: bottom right;
-        transition: transform 0.3s;
-      }
-
-      &:hover {
-        &:before {
-          transform: scaleX(1);
-        }
-
-        &:after {
-          transform: scaleX(1);
-        }
-      }
-    }
-  }
-`;
-const HEADER_NavLink = styled(NavLink)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  img {
-    height: 30px;
-  }
-  text-decoration: none;
-  color: ${(p) => p.theme.fontColor};
-  white-space: nowrap;
-
-  ${(p) => {
-    if (p.flag === 1) {
-      return css`
-        @media screen and (max-width: ${(p) => p.theme.media1}) {
-          display: none;
-        }
-      `;
-    }
-  }}
-`;
-
-const ResponIcon = styled.div`
-  img {
-    height: 20px;
-  }
-
-  display: none;
-
-  ${(p) => {
-    return css`
-      @media screen and (max-width: ${(p) => p.theme.media1}) {
-        display: block;
-      }
-    `;
-  }}
-`;
 
 export default Header;
