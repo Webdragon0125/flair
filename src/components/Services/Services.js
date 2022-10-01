@@ -1,9 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styled from "styled-components";
 
 import IMG_RIGHT_DIR from '../../assets/right-dir.png';
 
 const Service = ({props}) => {
+
+        
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, [])
+
     return (
         <Wrapper bgImg={props.img}>
             <img src={props.img} />

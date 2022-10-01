@@ -1,15 +1,21 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { Link } from "react-router-dom";
 import AppContext from "../../context/context";
 
 import IMG_REMOVE_INFORM from '../../assets/remove_inform.png';
 
 const Inform = () => {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, [])
     const AppContextProps = useContext(AppContext);
 
     return (
-        <Wrapper flag={AppContextProps.informFlag}>
+        <Wrapper flag={AppContextProps.informFlag} data-aos="fade-right" data-aos-duration="1000">
             <div>
                 <img src={IMG_REMOVE_INFORM} onClick={() => AppContextProps.setInformFlag(false)}></img>
                 <p>Due to incresed airport security processing time, we've made changes to our airport chek-in time for departures from Vancouver, Edmonton, Calgary, Ottawa , Kitchener-Warterloo and Abbotsford.</p>

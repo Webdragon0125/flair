@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styled from "styled-components";
 
 const City = ({props}) => {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, [])
     return (
-        <Wrapper bgImg={props.img}>
+        <Wrapper bgImg={props.img} data-aos="zoom-out-right" data-aos-duration="1500">
             <img src={props.img} />
             <div>
                 <h3> { props.name } </h3>

@@ -1,5 +1,8 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { Link } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 import IMG_FOOTER_LOGO from '../../assets/footer-logo.png';
 
 import { CONTACTS } from "../../constant/CONTACT";
@@ -13,6 +16,12 @@ import {
 } from "./Footer-css";
 
 const Footer = () => {
+    
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, [])
+
     return (
         <Wrapper>
             <div className="footer-body"> 

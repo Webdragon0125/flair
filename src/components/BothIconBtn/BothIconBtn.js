@@ -1,7 +1,13 @@
-import React from "react";
+import React, {useEffect} from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styled, {css} from "styled-components";
 
 const BothIconBtn = ({props}) => {
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh();
+    }, [])
     return  (
         <CustomBtn colFlag = {props.colFlag} displayFlag = {props.displayFlag}>
             <img src={props.img1} />

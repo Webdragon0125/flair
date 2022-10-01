@@ -1,10 +1,11 @@
-import React, { useRef, useState } from "react";
-import styled from 'styled-components';
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
-
-import IMG_STAR from '../../assets/star.png';
+import IMG_STAR from "../../assets/star.png";
 
 // Import Swiper styles
 import "swiper/css";
@@ -16,9 +17,14 @@ import "./Feedbacks.css";
 // import required modules
 import { Pagination, Navigation } from "swiper";
 
-export default function Feedback({props}) {
+export default function Feedback({ props }) {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper data-aos="fade-up" data-aos-anchor-placement="top-center">
       <Swiper
         slidesPerView={3}
         spaceBetween={40}
@@ -45,28 +51,20 @@ export default function Feedback({props}) {
           },
         }}
       >
-        {
-          props.map((item, index) => (
-            <CustomSwiperSlide key={index}>
-              <div className='div-1'>
-                <img src={item.img}></img>
-                <p> { item.name } </p>
-              </div>
-              <div className='div-2'>
-                {
-                  item.content
-                }
-              </div>
-              <div className="marks">
-                {
-                  new Array(5).fill(0).map((index) => (
-                    <img src={IMG_STAR} key={index}></img>
-                  ))
-                }
-              </div>
-            </CustomSwiperSlide>
-          ))
-        }
+        {props.map((item, index) => (
+          <CustomSwiperSlide key={index}>
+            <div className="div-1">
+              <img src={item.img}></img>
+              <p> {item.name} </p>
+            </div>
+            <div className="div-2">{item.content}</div>
+            <div className="marks">
+              {new Array(5).fill(0).map((item, index) => (
+                <img src={IMG_STAR} key={index}></img>
+              ))}
+            </div>
+          </CustomSwiperSlide>
+        ))}
       </Swiper>
     </Wrapper>
   );
@@ -81,7 +79,7 @@ const Wrapper = styled.div`
   position: relative;
   height: 100%;
   padding: 50px;
-`
+`;
 
 const CustomSwiperSlide = styled(SwiperSlide)`
   cursor: pointer;
@@ -89,7 +87,7 @@ const CustomSwiperSlide = styled(SwiperSlide)`
   display: flex;
   flex-direction: column;
   justify-content: start;
-  border: 1px solid ${p => p.theme.borderColor1};
+  border: 1px solid ${(p) => p.theme.borderColor1};
   border-radius: 10px;
   padding: 20px;
   position: relative;
@@ -126,4 +124,4 @@ const CustomSwiperSlide = styled(SwiperSlide)`
       width: 20px;
     }
   }
-`
+`;

@@ -1,101 +1,45 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { Select } from "antd";
+import "antd/dist/antd.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import styled from "styled-components";
 
-const SelectSearch = () => {
+const CustomSelectSearch = ({ props }) => {
+  const { Option } = Select;
 
-    const options = [
-        { name: 'New York' },
-        { name: 'BeiJing' },
-        { name: 'Moscow' },
-        { name: 'Kyoto' },
-        { name: 'Tokyo' },
-        { name: 'Berlin' },
-    ]
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
 
-    const [filteredResult, setFilteredResult] = useState([]);
+  const [value, setValue] = useState("");
 
-    const [inputValue, setInputValue] = useState('');
-
-    const valueChanged = (e) => {
-        setInputValue(e.target.value);
-        console.log(e.target.value);
-    }
-
-    useEffect(() => {
-        func_setFilteredResult()
-    }, [inputValue])
-    
-    const func_setFilteredResult = () => {
-        if (inputValue === '') {
-            setFilteredResult(options);
-        } else {
-            setFilteredResult(options.filter((item) => item.name.toLocaleLowerCase().indexOf(inputValue.toLocaleLowerCase()) !== -1));
+  return (
+    <Wrapper>
+      <CustomSelect
+        showSearch
+        placeholder={props.flg === 1 ? "From" : "To"}
+        optionFilterProp="children"
+        filterOption={(input, option) =>
+          option.children.toLowerCase().includes(input.toLowerCase())
         }
-    }
+        style={{
+          width: 200,
+          overflow: "hidden",
+          fontSize: 20,
+        }}
+      >
+        <Option value="New York">New York</Option>
+        <Option value="BeiJing">BeiJing</Option>
+        <Option value="London">London</Option>
+      </CustomSelect>
+    </Wrapper>
+  );
+};
 
-    const [filterdivflag, setFilterdivflag] = useState(false);
+const Wrapper = styled.div``;
 
-    return (
-        <Wrapper filterdivflag={filterdivflag}>
-            <input type={'text'} placeholder={'Where to ?'} value={inputValue} onChange={valueChanged} onFocus={() => setFilterdivflag(!filterdivflag)} 
-                // onBlur={() => setFilterdivflag(false)}
-            ></input>
-            <div className="filtered">
-                {
-                    filteredResult.map((item, index) => (
-                        <div className="filterd-items" key={index} onClick={() => {
-                            setInputValue(item.name);
-                            setFilterdivflag(false);
-                        }}>
-                            {item.name}
-                        </div>
-                    ))
-                }
-            </div>
-        </Wrapper>
-    )
-}
+const CustomSelect = styled(Select)``;
 
-const Wrapper = styled.div`
-    position: relative;
-    width: 300px;
-
-    @media screen and (max-width: 800px) {
-        width: 100%;
-    }
-
-    input {
-        width: 100%;
-        font-weight: 900;
-        font-size: 30px;
-        border: 1px solid ${p => p.theme.borderColor1};
-        outline: 0;
-        padding: 10px;
-        border-radius: 15px;
-        padding-left: 20px;
-        @media screen and (max-width: 800px) {
-            text-align: center;
-        }
-    }
-    .filtered {
-        z-index: 100;
-        margin-top: 5px;
-        width: 100%;
-        padding-left: 3px;
-        position: absolute;
-        display: ${p => p.filterdivflag ? p.theme.borderColor1 : 'none'};
-        border: 1px solid ${p => p.theme.fontColor};
-        backdrop-filter: blur(10px);
-        border-radius: 10px;
-        padding: 10px;
-        .filterd-items {
-            cursor: pointer;
-            padding: 5px;
-            &:hover {
-                /* outline: 1px solid ${p => p.theme.themeColor}; */
-            }
-        }
-    }
-`
-
-export default SelectSearch;
+export default CustomSelectSearch;
