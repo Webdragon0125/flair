@@ -1,45 +1,40 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DatePicker, Select } from "antd";
 
-import "antd/dist/antd.css";
-import AppContext from "../context/context";
+import AppContext from "../../context/context";
 import "react-datepicker/dist/react-datepicker.css";
 
 // Components
-import Inform from "../components/Inform/Inform";
-import Header from "../components/Header/Header";
-import CustomSelectSearch from "../components/SelectSearch/SelectSearch";
-import City from "../components/City/City";
-import Service from "../components/Services/Services";
-import Feedback from "../components/Feedbacks/Feedbacks";
-import Footer from "../components/Footer/Footer";
+import Inform from "../../components/Inform/Inform";
+import Header from "../../components/Header/Header";
+import CustomSelectSearch from "../../components/SelectSearch/SelectSearch";
+import City from "../../components/City/City";
+import Service from "../../components/Services/Services";
+import Feedback from "../../components/Feedbacks/Feedbacks";
+import Footer from "../../components/Footer/Footer";
 
 // Styled-components
 import { Wrapper, CustomDatePicker, WhereWeFly } from "./Landing-css";
 
 // Images
-import IMG_BOTH_DIR from "../assets/both-dir.png";
-import IMG_BOTH_DIR_WHITE from "../assets/both-dir-white.png";
-import IMG_SELECT_ARROW from "../assets/select-arrow.png";
-import IMG_RIGHT_DIR from "../assets/right.png";
-import IMG_BACK1 from "../assets/back1.png";
-import IMG_STREAM from "../assets/stream.png";
-import IMG_GET_READY_FLY from "../assets/get-ready-fly.png";
-import IMG_MAP from "../assets/map.png";
-import IMG_BACK from "../assets/back.jpg";
+import IMG_BOTH_DIR from "../../assets/both-dir.png";
+import IMG_BOTH_DIR_WHITE from "../../assets/both-dir-white.png";
+import IMG_SELECT_ARROW from "../../assets/select-arrow.png";
+import IMG_RIGHT_DIR from "../../assets/right.png";
+import IMG_BACK1 from "../../assets/back1.png";
+import IMG_STREAM from "../../assets/stream.png";
+import IMG_GET_READY_FLY from "../../assets/get-ready-fly.png";
+import IMG_MAP from "../../assets/map.png";
+import IMG_BACK from "../../assets/back.jpg";
 
 // JSONS
-import { HEADER } from "../constant/HEADER";
-import { BEST_DEAL } from "../constant/BEST_DEAL";
-import { SERVICES } from "../constant/SERVICES";
-import { CUSTOMERS } from "../constant/CUSTOMERS";
+import { HEADER } from "../../constant/HEADER";
+import { BEST_DEAL } from "../../constant/BEST_DEAL";
+import { SERVICES } from "../../constant/SERVICES";
+import { CUSTOMERS } from "../../constant/CUSTOMERS";
 
 // Images
 
 const Landing = () => {
-  const { RangePicker } = DatePicker;
-  const { Option } = Select;
-
   const AppContextProps = useContext(AppContext);
 
   const [startDate, setStartDate] = useState(new Date());

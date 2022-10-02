@@ -9,8 +9,19 @@ div {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'avatar-regular';
 }
 
 input {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'avatar-regular';
+  src: url('./assets/Fonts/AvertaDemoPECuttedDemo-Regular.otf');
+}
+
+@font-face {
+  font-family: 'avatar-bold';
+  src: url('./assets/Fonts/AvertaDemoPE-ExtraBold.otf');
 }

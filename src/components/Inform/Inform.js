@@ -14,6 +14,7 @@ const Inform = () => {
         <img
           src={IMG_REMOVE_INFORM}
           onClick={() => AppContextProps.setInformFlag(false)}
+          alt="inform"
         ></img>
         <p>
           Due to incresed airport security processing time, we've made changes

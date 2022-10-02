@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
 import DatePicker from "react-datepicker";
 
-import IMG_STREAM from "../assets/stream.png";
-import IMG_GET_READY_FLY from "../assets/get-ready-fly.png";
+import IMG_STREAM from "../../assets/stream.png";
+import IMG_GET_READY_FLY from "../../assets/get-ready-fly.png";
 
 export const Wrapper = styled.div`
   /* animation-name: backgroundColorPalette;
