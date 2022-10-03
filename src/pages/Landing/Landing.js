@@ -1,30 +1,25 @@
 import React, { useContext, useEffect, useState } from "react";
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
 
 import AppContext from "../../context/context";
-import "react-datepicker/dist/react-datepicker.css";
 
 // Components
 import Inform from "../../components/Inform/Inform";
 import Header from "../../components/Header/Header";
-import CustomSelectSearch from "../../components/SelectSearch/SelectSearch";
 import City from "../../components/City/City";
 import Service from "../../components/Services/Services";
 import Feedback from "../../components/Feedbacks/Feedbacks";
 import Footer from "../../components/Footer/Footer";
 
 // Styled-components
-import { Wrapper, CustomDatePicker, WhereWeFly } from "./Landing-css";
+import { Wrapper, WhereWeFly } from "./Landing-css";
 
 // Images
-import IMG_BOTH_DIR from "../../assets/both-dir.png";
-import IMG_BOTH_DIR_WHITE from "../../assets/both-dir-white.png";
-import IMG_SELECT_ARROW from "../../assets/select-arrow.png";
-import IMG_RIGHT_DIR from "../../assets/right.png";
 import IMG_BACK1 from "../../assets/back1.png";
-import IMG_STREAM from "../../assets/stream.png";
-import IMG_GET_READY_FLY from "../../assets/get-ready-fly.png";
 import IMG_MAP from "../../assets/map.png";
 import IMG_BACK from "../../assets/back.jpg";
+import IMG_BOTH_DIR from '../../assets/both-dir-white.png';
 
 // JSONS
 import { HEADER } from "../../constant/HEADER";
@@ -40,9 +35,11 @@ const Landing = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   const options = [
-    { name: "New York", value: "ne" },
-    { name: "BeiJing", value: "be" },
-    { name: "London", value: "lo" },
+    { label: 'The Shawshank Redemption', year: 1994 },
+    { label: 'The Godfather', year: 1972 },
+    { label: 'The Godfather: Part II', year: 1974 },
+    { label: 'The Dark Knight', year: 2008 },
+    { label: '12 Angry Men', year: 1957 },
   ];
 
   const wrapperClicked = (e) => {
@@ -57,45 +54,30 @@ const Landing = () => {
         <div className="search-for">
           <h1>Search for low prices on airfare and more</h1>
         </div>
-        <div className="seperator" />
-      </div>
-      {/* <div className="search-search-div">
-        <div className="main-container">
-          <div className="tickets-div">
-            <div className="tickets">
-              <img src={IMG_BOTH_DIR}></img>
-              <Select style={{ minWidth: 150 }} defaultValue={1}>
-                <Option value={1}>round trip</Option>
-                <Option value={2}>one-way flight</Option>
-              </Select>
-            </div>
-          </div>
-
-          <div className="search-div">
-            <div className="region-search">
-              <CustomSelectSearch props={{ flg: 1 }}></CustomSelectSearch>
-              <CustomSelectSearch props={{ flg: 2 }}></CustomSelectSearch>
-              <div className="search-swap">
-                <img src={IMG_BOTH_DIR_WHITE}></img>
-              </div>
-            </div>
-            <div className="data-search">
-              <RangePicker />
-            </div>
-          </div>
-
-          <div className="search-parent-div">
-            <button>
-              Search
-              <img src={IMG_RIGHT_DIR}></img>
-            </button>
+        <div className="search-input-div">
+          <div className="search-position">
+            <Autocomplete
+              disablePortal
+              id="combo-box-demo"
+              options={options}
+              sx={{ width: 300 }}
+              renderInput={(params) => <TextField {...params} label="Movie" />}
+            />
+            <Autocomplete
+              disablePortal
+              id="combo-box-demo"
+              options={options}
+              sx={{ width: 300 }}
+              renderInput={(params) => <TextField {...params} label="Movie" />}
+            />
+            <img src={IMG_BOTH_DIR} alt=''></img>
           </div>
         </div>
-      </div> */}
+      </div>
 
       <div className="sun-of-beach">
         <p className="title">Explore more deals</p>
-        <img src={IMG_BACK1}></img>
+        <img src={IMG_BACK1} alt=''></img>
       </div>
 
       <div className="best-deals">
