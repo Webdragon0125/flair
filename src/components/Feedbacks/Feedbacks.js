@@ -47,13 +47,13 @@ export default function Feedback({ props }) {
         {props.map((item, index) => (
           <CustomSwiperSlide key={index}>
             <div className="div-1">
-              <img src={item.img}></img>
+              <img src={item.img} alt=''></img>
               <p> {item.name} </p>
             </div>
             <div className="div-2">{item.content}</div>
             <div className="marks">
               {new Array(5).fill(0).map((item, index) => (
-                <img src={IMG_STAR} key={index}></img>
+                <img src={IMG_STAR} key={index} alt=''></img>
               ))}
             </div>
           </CustomSwiperSlide>

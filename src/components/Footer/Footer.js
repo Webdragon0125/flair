@@ -25,8 +25,9 @@ const Footer = () => {
 
           <div className="contact">
             {CONTACTS.map((item, index) => (
-              <a link={item.url} target="_blank">
-                <img src={item.img}></img>
+              // eslint-disable-next-line jsx-a11y/anchor-is-valid
+              <a link={item.url} target="_blank" key={index}>
+                <img src={item.img} alt=''></img>
               </a>
             ))}
           </div>

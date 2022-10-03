@@ -14,9 +14,12 @@ export const Wrapper = styled.div`
     align-items: center;
     margin: 20px;
     width: 70%;
+    @media screen and (max-width: 400px) {
+        width: 90%;
+    }
     border-radius: 50px;
     gap: 30px;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 600px) {
         flex-direction: column;
         gap: 10px;
     }
@@ -29,7 +32,7 @@ export const Wrapper = styled.div`
         @media screen and (max-width: 768px) {
             content: url(${IMG_FLYING2});
         }
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 600px) {
             content: url(${IMG_FLYING3});
             width: 20px;
             height: auto;

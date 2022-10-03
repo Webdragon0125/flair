@@ -46,7 +46,7 @@ const Header = ({ props }) => {
                 key={index}
                 flag={item.flag}
               >
-                <img src={item.img}></img>
+                <img src={item.img} alt=''></img>
                 {item.content}
               </HEADER_NavLink>
             </div>
