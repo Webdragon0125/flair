@@ -1,19 +1,17 @@
 import styled from "styled-components";
 
-import IMG_UNCHECKED from '../../assets/unchecked.png';
-import IMG_CHECKED from '../../assets/checked.png'
-
 export const Wrapper = styled.div`
     border: ${p => p.checked ? 'none' : 'solid 1px '+p.theme.borderColor1};
     box-shadow: ${p => !p.checked ? 'none' : '5px 5px 10px 10px rgba(0, 0, 0, 0.08)'};
     padding: 20px 20px 0 30px;
     border-radius: 20px;
-    height: 100%;
+    min-height: 450px;
     width: 300px;
     position: relative;
-    h1 {
+    & > h1:nth-child(1) {
         font-size: 20px;
         font-family: 'avatar-bold';
+        margin-top: 20px;
         margin-bottom: 10px;
     }
     .fee-div {
@@ -57,6 +55,14 @@ export const Wrapper = styled.div`
         background-color: white;
         font-size: 14px;
         top: -10px;
-        right: 10px;
+        right: 20px;
+    }
+    .img-checked {
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        img {
+            height: 25px;
+        }
     }
 `

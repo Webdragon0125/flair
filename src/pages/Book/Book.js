@@ -47,26 +47,31 @@ const Book = () => {
         <PromoCode></PromoCode>
       </div>
       <div className='ticket-infos'>
-        {
-          TICKETINFO.map((item, index) => (
-            <>
-              <TicketInfo props={item} key={index}></TicketInfo>
-              <div className='bundles'>
-                <h1>Choose a bundle</h1>
-                <div className='bundle-items'>
-                  {
-                    BUNDLE.map((item, index) => (
-                      <Bundle 
-                        props={{...item, checked: index === bundleFlag ? true : false}}
-                        key={index}
-                      ></Bundle>
-                    ))                    
-                  }
+        <div className='ticket-infos-div'>
+          {
+            TICKETINFO.map((item, index) => (
+              <div className='ticket-item'>
+                <TicketInfo props={item} key={index}></TicketInfo>
+                <div className='bundles'>
+                  <h1>Choose a bundle</h1>
+                  <div className='bundle-items'>
+                    {
+                      BUNDLE.map((item, index) => (
+                        <Bundle 
+                          props={{...item, checked: index === bundleFlag ? true : false, setBundle:setBundleFlag, bundle: index}}
+                          key={index}
+                        ></Bundle>
+                      ))
+                    }
+                  </div>
+                </div>
+                <div className='continue'>
+                  <button>Continue</button>
                 </div>
               </div>
-            </>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     </Wrapper>
   );

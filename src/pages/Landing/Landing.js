@@ -152,7 +152,6 @@ const Landing = () => {
         <p className="title">See what out customers are saying</p>
         <Feedback props={CUSTOMERS}></Feedback>
       </div>
-
       <Footer></Footer>
     </Wrapper>
   );

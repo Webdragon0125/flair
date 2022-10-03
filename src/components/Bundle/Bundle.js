@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import IMG_BAG from '../../assets/bag.png';
+import IMG_UNCHECKED from '../../assets/unchecked.png';
+import IMG_CHECKED from '../../assets/checked.png'
 
 // Styled components
 import {
@@ -10,7 +12,7 @@ import {
 
 const Bundle = ({props}) => {
     return (
-        <Wrapper checked={props.checked}>
+        <Wrapper checked={props.checked} onClick={() => { props.setBundle(props.bundle)}}>
             <h1>{props.name}</h1>
             <div className='fee-div'>
                 <h2>{ props.fee.flag === 0 ? 'no fee' : <><span>+${props.fee.pp}</span>{' per passenger'}</> }</h2>            
@@ -40,6 +42,9 @@ const Bundle = ({props}) => {
             {
                 props.recommend ? <div className='recommend'>recommend</div> : null
             }
+            <div className='img-checked'>
+                <img src={props.checked ? IMG_CHECKED : IMG_UNCHECKED} alt=''></img>
+            </div>
         </Wrapper>
     )
 }

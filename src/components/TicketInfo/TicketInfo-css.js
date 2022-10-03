@@ -9,15 +9,15 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%;
-    padding: 20px;
+    padding: 30px 20px;
+    margin: auto;
     color: ${p => p.theme.fontColor};
-    margin: 20px;
+    border-bottom: 1px solid ${p => p.theme.borderColor1};
     @media screen and (max-width: 900px) {
         flex-direction: column;
         gap: 30px;
         border-radius: 20px;
-        box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.09);
+        /* box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.09); */
     }
 
     .from-to {

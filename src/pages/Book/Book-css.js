@@ -23,20 +23,55 @@ export const Wrapper = styled.div`
         }
     }
     .ticket-infos {
-        .bundles {
-            h1 {
-                padding: 0 100px;
-            }
-            .bundle-items {
-                display: flex;
-                align-items: flex-start;
-                justify-content: space-around;
-                gap: 10px;
-                flex-wrap: wrap;
-                padding: 50px;
-                height: 600px;
-                @media screen and (max-width: 200px){
-                    
+        display: flex;
+        justify-content: center;
+        .ticket-infos-div {
+            margin: 50px;
+            width: 80%;
+            .ticket-item {
+                border-radius: 30px;
+                border: 1px solid ${p => p.theme.borderColor1};
+                margin-bottom: 30px;
+                padding-bottom: 30px;
+                .bundles {
+                    & > h1:nth-child(1) {
+                        padding: 20px 100px;
+                        @media screen and (max-width: 1152px) {
+                            text-align: center;
+                            padding: 20px 0px;
+                        }
+                    }
+                    .bundle-items {
+                        display: flex;  
+                        align-items: flex-start;
+                        justify-content: space-around;
+                        gap: 10px;
+                        @media screen and (max-width: 1152px) {
+                            gap: 30px;
+                        }
+                        flex-wrap: wrap;
+                        /* height: 600px;
+                        @media screen and (max-width: 1120px){
+                            height: 1300px;
+                        } */
+                    }
+                }
+
+                .continue {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    button {
+                        border: 0;
+                        outline: 0;
+                        padding: 10px 30px;
+                        border-radius: 50px;
+                        background-color: ${p => p.theme.themeColor1};
+                        margin: 20px 30px 0 0;
+                        color: ${p => p.theme.fontColor1};
+                        font-size: 15px;
+                    }
                 }
             }
         }
