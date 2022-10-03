@@ -4,7 +4,6 @@ import { Wrapper } from "./Ticket-css";
 
 // Images
 
-
 const Ticket = ({props}) => {
   return (
     <Wrapper>
