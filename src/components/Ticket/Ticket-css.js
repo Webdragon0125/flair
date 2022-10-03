@@ -12,8 +12,11 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px;
+    
     width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
     @media screen and (max-width: 400px) {
         width: 90%;
     }

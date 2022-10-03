@@ -8,10 +8,18 @@ export const Wrapper = styled.div`
     justify-content: space-around;
     align-items: flex-start;
     padding: 50px;
-    flex-wrap: wrap;
+    @media screen and (max-width: 600px) {
+      padding: 50px 20px;
+    }
     gap: 50px;
     .div-1 {
       width: 20%;
+      @media screen and (max-width: 800px) {
+        width: 30%;
+      }
+      @media screen and (max-width: 600px) {
+        width: 40%;
+      }
       .footer-logo {
         height: 50px;
       }
@@ -33,6 +41,16 @@ export const Wrapper = styled.div`
         img {
           height: 15px;
         }
+      }
+    }
+    .div-3 {
+      @media screen and (max-width: 900px) {
+        display: none;
+      }
+    }
+    .div-2 {
+      @media screen and (max-width: 600px) {
+        display: none;
       }
     }
     .company {

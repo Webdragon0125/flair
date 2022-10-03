@@ -1,6 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
 import TextField from '@mui/material/TextField';
+import { Link } from "react-router-dom";
 import Autocomplete from '@mui/material/Autocomplete';
+
+import Stack from '@mui/material/Stack';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
+import dayjs from 'dayjs';
 
 import AppContext from "../../context/context";
 
@@ -11,6 +18,7 @@ import City from "../../components/City/City";
 import Service from "../../components/Services/Services";
 import Feedback from "../../components/Feedbacks/Feedbacks";
 import Footer from "../../components/Footer/Footer";
+import SelPassenger from "../../components/SelPassenger/SelPassenger";
 
 // Styled-components
 import { Wrapper, WhereWeFly } from "./Landing-css";
@@ -19,7 +27,9 @@ import { Wrapper, WhereWeFly } from "./Landing-css";
 import IMG_BACK1 from "../../assets/back1.png";
 import IMG_MAP from "../../assets/map.png";
 import IMG_BACK from "../../assets/back.jpg";
-import IMG_BOTH_DIR from '../../assets/both-dir-white.png';
+import IMG_BOTH_DIR_WHITE from '../../assets/both-dir-white.png';
+import IMG_BOTH_DIR from '../../assets/both-dir.png';
+import IMG_RIGHT from '../../assets/right.png';
 
 // JSONS
 import { HEADER } from "../../constant/HEADER";
@@ -27,12 +37,16 @@ import { BEST_DEAL } from "../../constant/BEST_DEAL";
 import { SERVICES } from "../../constant/SERVICES";
 import { CUSTOMERS } from "../../constant/CUSTOMERS";
 
+
 // Images
 
 const Landing = () => {
+
   const AppContextProps = useContext(AppContext);
 
   const [startDate, setStartDate] = useState(new Date());
+
+  const [value, setValue] = React.useState(dayjs('2022-04-07'));
 
   const options = [
     { label: 'The Shawshank Redemption', year: 1994 },
@@ -54,6 +68,17 @@ const Landing = () => {
         <div className="search-for">
           <h1>Search for low prices on airfare and more</h1>
         </div>
+        <div className="trip-kind-and-person">
+          <div className="trip-kind">
+            <img src={IMG_BOTH_DIR} alt=''></img>
+            <select>
+              <option>round trip</option>
+              <option>one-way flight</option>
+            </select>
+          </div>
+          <SelPassenger></SelPassenger>
+          <div className="person"></div>
+        </div>
         <div className="search-input-div">
           <div className="search-position">
             <Autocomplete
@@ -61,28 +86,82 @@ const Landing = () => {
               id="combo-box-demo"
               options={options}
               sx={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label="Movie" />}
+              renderInput={(params) => <TextField {...params} label="Edminton" sx={{
+              }} />}
             />
             <Autocomplete
               disablePortal
               id="combo-box-demo"
               options={options}
               sx={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label="Movie" />}
+              renderInput={(params) => <TextField {...params} label="Where to?" />}
             />
-            <img src={IMG_BOTH_DIR} alt=''></img>
+            <img src={IMG_BOTH_DIR_WHITE} alt=''></img>
+          </div>
+          <div className="search-date">
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <Stack spacing={3}>
+                <DesktopDatePicker
+                  label="From"
+                  value={value}
+                  minDate={dayjs('2017-01-01')}
+                  onChange={(newValue) => {
+                    setValue(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} 
+                    
+                  />}
+                />
+              </Stack>
+            </LocalizationProvider>
+            <LocalizationProvider dateAdapter={AdapterDayjs}>
+              <Stack spacing={3}>
+                <DesktopDatePicker
+                  label="To"
+                  value={value}
+                  minDate={dayjs('2017-01-01')}
+                  onChange={(newValue) => {
+                    setValue(newValue);
+                  }}
+                  renderInput={(params) => <TextField {...params} sx={{
+                    
+                  }} />}
+                />
+              </Stack>
+            </LocalizationProvider>
+          </div>
+        </div>
+        <div className="search-button-contain-div">
+          <button>search <img src={IMG_RIGHT} alt='' /></button>
+          <div className="choose-what">
+            <div className="choose-what-title">
+              Trending searches
+            </div>
+            <div className="choose-wait-childs">
+              <div>
+                edmonton to vancouver
+              </div>
+              <div>
+                edmonton to vancouver
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="sun-of-beach">
         <p className="title">Explore more deals</p>
-        <img src={IMG_BACK1} alt=''></img>
+        <Link to='/book'><img src={IMG_BACK1} alt=''></img></Link>
       </div>
 
       <div className="best-deals">
-        <p className="title">Enjoy our best deals from</p>
-
+        <div>
+          <p className="title">Enjoy our best deals from</p>
+          <select>
+            <option> Toronto </option>
+            <option> Edminton </option>
+          </select>
+        </div>
         <div className="items">
           {BEST_DEAL.map((item, index) => (
             <City

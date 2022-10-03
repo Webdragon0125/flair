@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import IMG_STREAM from "../../assets/stream.png";
 import IMG_GET_READY_FLY from "../../assets/get-ready-fly.png";
+import IMG_BACK1_RESP from '../../assets/back1-resp.png';
 
 export const Wrapper = styled.div`
   /* animation-name: backgroundColorPalette;
@@ -35,9 +36,10 @@ export const Wrapper = styled.div`
   .landing-first {
     position: relative;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; 
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 30px;
 
     @media (max-width: 768px) {
       background-size: auto 100%;
@@ -45,11 +47,38 @@ export const Wrapper = styled.div`
     }
 
     width: 100%;
-    height: 100vh;
-
-    overflow: hidden;
-
+    min-height: 100vh;
     z-index: 0;
+    .trip-kind-and-person {
+      margin: 20px 100px;
+      @media screen and (max-width: 768px) {
+        margin: 20px 20px;
+      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      width: min-content;
+      @media screen and (max-width: 768px) {
+        width: 90%;
+        justify-content: space-between;
+      }
+      .trip-kind {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        & > img:nth-child(1) {
+          width: 30px;
+        }
+        select {
+          border: 0;
+          font-size: 18px;
+          outline: 0;
+        }
+      }
+    }
+
     .search-for {
       font-weight: 900;
     }
@@ -79,18 +108,88 @@ export const Wrapper = styled.div`
       display: flex;
       justify-content: space-around;
       align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 0 30px;
       .search-position {
         display: flex;
         justify-content: center;
         align-items: center;
         position: relative;
         gap: 30px;
+        @media screen and (max-width: 670px) {
+          flex-direction: column;
+        }
         img {
           position: absolute;
           background-color: black;
           width: 25px;
           padding: 10px;
           border-radius: 50px;
+          @media screen and (max-width: 670px) {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+      .search-date {
+        display: flex;
+      }
+    }
+
+    .search-button-contain-div {
+      display: flex;
+      margin: 50px 100px 50px 100px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      @media screen and (max-width: 768px) {
+        margin: 20px 20px;
+      }
+      button {
+        background-color: ${p => p.theme.themeColor1};
+        border: 0;
+        color: white;
+        font-size: 20px;
+        padding: 10px 100px;
+        border-radius: 50px;
+        position: relative;
+        @media screen and (max-width: 1180px) {
+          margin: auto;
+        }
+        img {
+          position: absolute;
+          height: 30px;
+          right: 20px;
+          top: calc(50% - 15px);
+        }
+      }
+      
+      .choose-what {
+        @media screen and (max-width: 1180px) {
+          margin: auto;
+        }
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-weight: 900;
+        font-size: 22px;
+        flex-wrap: wrap;
+        div {
+          white-space: nowrap;
+        }
+        .choose-wait-childs {
+          font-size: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          flex-wrap: wrap;
+          div {
+            background-color: ${p => p.theme.themeColor};
+            padding: 5px 10px;
+          }
         }
       }
     }
@@ -103,11 +202,14 @@ export const Wrapper = styled.div`
     gap: 30px;
 
     .title {
-      font-size: 40px;
+      font-size: 20px;
       font-weight: 700;
     }
     img {
       width: 100%;
+      @media screen and (max-width: 768px) {
+        content: url(${IMG_BACK1_RESP});
+      }
     }
   }
 
@@ -117,10 +219,24 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: center;
     gap: 30px;
-
-    .title {
-      font-size: 40px;
-      font-weight: 700;
+    & > div:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 0 20px;
+      flex-wrap: wrap;
+      .title {
+        font-size: 30px;
+        font-weight: 700;
+      }
+      select {
+        border: 0;
+        font-size: 25px;
+        outline: 0;
+        font-weight: bold;
+        border-bottom: 1px solid black;
+      }
     }
 
     .items {

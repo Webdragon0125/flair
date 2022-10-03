@@ -24,13 +24,13 @@ export default function Feedback({ props }) {
         pagination={{
           clickable: true,
         }}
-        navigation={true}
         grabCursor={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
         breakpoints={{
           0: {
             slidesPerView: 1,
+            navigation: false
           },
           800: {
             slidesPerView: 2,

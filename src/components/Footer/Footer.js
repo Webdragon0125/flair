@@ -33,7 +33,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="company">
+        <div className="company div-1">
           <h1>{COMPANIES.label}</h1>
           <div className="childs">
             {COMPANIES.childs.map((item, index) => (
@@ -45,7 +45,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="company">
+        <div className="company div-2">
           <h1>{DESTINATIONS.label}</h1>
           <div className="childs">
             {DESTINATIONS.childs.map((item, index) => (
@@ -57,7 +57,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="company">
+        <div className="company div-3">
           <h1>{TRANDING_ROUTES.label}</h1>
           <div className="childs">
             {TRANDING_ROUTES.childs.map((item, index) => (

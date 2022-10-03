@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import IMG_RIGHT_DIR from "../../assets/right-dir.png";
@@ -6,12 +6,12 @@ import IMG_RIGHT_DIR from "../../assets/right-dir.png";
 const Service = ({ props }) => {
   return (
     <Wrapper bgImg={props.img}>
-      <img src={props.img} />
+      <img src={props.img} alt='' />
       <div className="content">
         <div>
           <h3> {props.title} </h3>
           <p> {props.content} </p>
-          <img src={IMG_RIGHT_DIR} />
+          <img src={IMG_RIGHT_DIR} alt='' />
         </div>
       </div>
     </Wrapper>

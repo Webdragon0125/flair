@@ -2,9 +2,9 @@ import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
     .tickets {
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; */
     }
     .inform1 {
         display: flex;

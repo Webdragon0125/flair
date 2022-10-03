@@ -4,7 +4,7 @@ import { Wrapper } from './TicketInfo-css';
 
 const TicketInfo = ({props}) => {
     return (
-        <Wrapper>
+        <Wrapper isOpen={props.isOpen}>
             <div className='from-to'>
                 <div className='posi-div'>
                     <p className='posi-p'>

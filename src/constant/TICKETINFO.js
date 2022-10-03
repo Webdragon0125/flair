@@ -13,7 +13,8 @@ export const TICKETINFO = [
             for: '1h 35m',
             plane: 'F81798'
         },
-        price: 49.00
+        price: 49.00,
+        isOpen: true,
     },
     {
         from: {
@@ -29,6 +30,7 @@ export const TICKETINFO = [
             for: '1h 35m',
             plane: 'F81798'
         },
-        price: 49.00
+        price: 49.00,
+        isOpen: false,
     }
 ]

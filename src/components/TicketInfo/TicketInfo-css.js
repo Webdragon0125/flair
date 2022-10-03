@@ -12,12 +12,12 @@ export const Wrapper = styled.div`
     padding: 30px 20px;
     margin: auto;
     color: ${p => p.theme.fontColor};
-    border-bottom: 1px solid ${p => p.theme.borderColor1};
+    border-bottom: ${p => p.isOpen ? '1px' : '0px'} solid ${p => p.theme.borderColor1};
     @media screen and (max-width: 900px) {
         flex-direction: column;
         gap: 30px;
         border-radius: 20px;
-        /* box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.09); */
+        box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.09);
     }
 
     .from-to {
