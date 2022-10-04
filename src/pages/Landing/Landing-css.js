@@ -91,6 +91,10 @@ export const Wrapper = styled.div`
       @media screen and (min-width: 1130px) {
         margin-bottom: 200px;
       }
+      @media screen and (max-width: 1130px) {
+        padding: 20px 20px 10px 20px;
+      }
+      
       h1 {
         font-size: 70px;
         font-weight: 900;
@@ -101,6 +105,9 @@ export const Wrapper = styled.div`
         }
         @media screen and (max-width: 768px) {
           font-size: 30px;
+        }
+        @media screen and (max-width: 500px) {
+          font-size: 20px;
         }
       }
       ${(p) => {
@@ -119,6 +126,9 @@ export const Wrapper = styled.div`
       gap: 20px;
       flex-wrap: wrap;
       margin: 50px 30px;
+      @media screen and (max-width: 1000px) {
+        margin: 20px 30px;
+      }
       .search-position {
         display: flex;
         justify-content: center;
@@ -153,7 +163,8 @@ export const Wrapper = styled.div`
       gap: 20px;
       flex-wrap: wrap;
       @media screen and (max-width: 768px) {
-        margin: 20px 20px;
+        margin: 10px 20px;
+        padding: 10px 0;
       }
       button {
         background-color: ${p => p.theme.themeColor1};
