@@ -209,10 +209,10 @@ const Landing = () => {
               Trending searches
             </div>
             <div className="choose-wait-childs">
-              <div data-aos="fade-left" data-aos-duration='1000'>
+              <div>
                 edmonton to vancouver
               </div>
-              <div data-aos="fade-left" data-aos-duration='1000'>
+              <div>
                 edmonton to vancouver
               </div>
             </div>

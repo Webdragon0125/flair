@@ -57,6 +57,10 @@ export const Wrapper = styled.div`
 
     img {
       height: 30px;
+      @media screen and (min-width: 1920px) {
+        transform: scale(1.6);
+        margin-left: 50px;
+      }
     }
   }
   .navbars {

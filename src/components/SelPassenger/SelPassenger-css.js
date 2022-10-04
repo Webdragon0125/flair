@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
+    @media screen and (min-width: 1920px) {
+        transform: scale(1.4);
+    }
     position: relative;
     width: 200px;
     .select-body {
@@ -21,7 +24,7 @@ export const Wrapper = styled.div`
         border: 1px solid ${p => p.theme.borderColor1};
         padding: 10px;
         background-color: white;
-        z-index: 100;
+        z-index: 1000;
         @media screen and (max-width: 768px){
             left: -200px;
         }

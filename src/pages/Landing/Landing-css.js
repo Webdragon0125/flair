@@ -27,7 +27,6 @@ export const Wrapper = styled.div`
             background: #ff9b85;
         }
     } */
-
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -71,6 +70,9 @@ export const Wrapper = styled.div`
         & > img:nth-child(1) {
           width: 30px;
         }
+        @media screen and (min-width: 1920px) {
+          transform: scale(1.6);
+        }
         select {
           border: 0;
           font-size: 18px;
@@ -88,11 +90,11 @@ export const Wrapper = styled.div`
     }
     .search-for {
       padding: 50px 50px 30px 50px;
-      @media screen and (min-width: 1130px) {
-        margin-bottom: 200px;
-      }
       @media screen and (max-width: 1130px) {
         padding: 20px 20px 10px 20px;
+      }
+      @media screen and (min-width: 1920px) {
+        margin-bottom: 200px;
       }
       
       h1 {
@@ -127,7 +129,10 @@ export const Wrapper = styled.div`
       flex-wrap: wrap;
       margin: 50px 30px;
       @media screen and (max-width: 1000px) {
-        margin: 20px 30px;
+        margin:5px 30px;
+      }
+      @media screen and (min-width: 1920px) {
+        margin: 100px 30px;
       }
       .search-position {
         display: flex;
@@ -137,6 +142,9 @@ export const Wrapper = styled.div`
         gap: 30px;
         @media screen and (max-width: 670px) {
           flex-direction: column;
+        }
+        @media screen and (min-width: 1920px) {
+          transform: scale(1.6);
         }
         img {
           position: absolute;
@@ -151,6 +159,9 @@ export const Wrapper = styled.div`
       }
       .search-date {
         display: flex;
+        @media screen and (min-width: 1920px) {
+          transform: scale(1.6);
+        }
       }
     }
 
@@ -163,8 +174,11 @@ export const Wrapper = styled.div`
       gap: 20px;
       flex-wrap: wrap;
       @media screen and (max-width: 768px) {
-        margin: 10px 20px;
+        margin: 0px 20px;
         padding: 10px 0;
+      }
+      @media screen and (min-width: 1920px) {
+        margin: 200px 100px 0 100px;
       }
       button {
         background-color: ${p => p.theme.themeColor1};
@@ -183,9 +197,17 @@ export const Wrapper = styled.div`
           right: 20px;
           top: calc(50% - 15px);
         }
+        @media screen and (min-width: 1920px) {
+          transform: scale(1.6);
+          margin-left: 100px;
+        }
       }
       
       .choose-what {
+        @media screen and (min-width: 1920px) {
+          transform: scale(1.6);
+          margin-right: 150px;
+        }
         @media screen and (max-width: 1180px) {
           margin: auto;
         }
@@ -196,6 +218,9 @@ export const Wrapper = styled.div`
         font-weight: 900;
         font-size: 22px;
         flex-wrap: wrap;
+        @media screen and (max-width: 500px) {
+          gap: 5px;
+        }
         div {
           white-space: nowrap;
         }
@@ -209,6 +234,9 @@ export const Wrapper = styled.div`
           div {
             background-color: ${p => p.theme.themeColor};
             padding: 5px 10px;
+          }
+          @media screen and (max-width: 500px) {
+            gap: 5px;
           }
         }
       }
