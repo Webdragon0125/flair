@@ -8,6 +8,7 @@ export const Wrapper = styled.div`
         margin: 20px 100px;
         gap: 20px;
         flex-wrap: wrap;
+        margin-top: 100px;
         .label-flight-div {
             font-family: 'avatar-bold';
             font-size: 25px;
@@ -69,6 +70,9 @@ export const Wrapper = styled.div`
 
     .passenger-information-div {
         margin: 20px 100px;
+        @media screen and (max-width: 600px) {
+            margin: 20px 20px;
+        }
         .label {
             font-family: 'avatar-bold';
         }
@@ -92,8 +96,110 @@ export const Wrapper = styled.div`
                 }
             }
             .forms {
-                
+                display: flex;
+                justify-content: space-around;
+                gap: 20px;
+                margin-top: 50px;
+                align-items: center;
+                flex-wrap: wrap;
+                .MuiFormControl-root.MuiTextField-root {
+                    width: 100%;
+                }
+                @media screen and (max-width: 900px) {
+                    flex-direction: column;
+                    & > div {
+                        width: 90% !important;
+                    }
+                }
+            }
+            .receive-email-check {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                color: ${p => p.theme.borderColor1};
+                margin: 20px 10px;
+            }
+            .access-request {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                color: ${p => p.theme.borderColor1};
             }
         }
+    }
+    .forget-something {
+        border: 1px solid ${p => p.theme.borderColor1};
+        margin: 20px 100px;
+        padding: 50px;
+        border-radius: 30px;
+        margin-top: 100px;
+        @media screen and (max-width: 600px) {
+            margin: 20px 20px;
+        }
+        h1 {
+            font-family: 'avatar-bold';
+            text-align: center;
+        }
+        .somethings {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            margin-top: 80px;
+            flex-wrap: wrap;
+            .something {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+                flex-wrap: wrap;
+                
+                div {
+                    img {
+                        height: 100px;
+                    }
+                    padding: 30px;
+                    border-radius: 30px;
+                    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.1);
+                }
+                button {
+                    border: 0;
+                    outline: 0;
+                    background-color: ${p => p.theme.themeColor1};
+                    padding: 10px 30px;
+                    color: white;
+                    border-radius: 20px;
+                    margin: 20px;
+                }
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        justify-content: flex-end;
+        margin: 20px 100px;
+        gap: 30px;
+        & > button:nth-child(1) {
+            color: ${p => p.theme.themeColor1};
+            font-family: 'avatar-bold';
+            font-size: 20px;
+            padding: 10px 20px;
+            border: 1px solid ${p => p.theme.themeColor1};
+            background-color: white;
+            border-radius: 50px;
+        }
+        & > button:nth-child(2) {
+            color: white;
+            font-family: 'avatar-bold';
+            font-size: 20px;
+            padding: 10px 20px;
+            background-color: ${p => p.theme.themeColor1};
+            border-radius: 50px;
+            border: 0;
+        }
+        @media screen and (max-width: 600px) {
+            margin: 20px 20px;
+        }
+        margin-bottom: 100px;
     }
 `

@@ -68,7 +68,7 @@ const Book = () => {
                                 </div>
                               </div>
                               <div className='continue'>
-                                <button>Continue</button>
+                                <Link to='/reser1'>Continue</Link>
                               </div>
                             </React.Fragment>
                           ) : null

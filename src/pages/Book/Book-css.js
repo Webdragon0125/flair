@@ -62,8 +62,9 @@ export const Wrapper = styled.div`
                     display: flex;
                     align-items: center;
                     justify-content: flex-end;
-                    button {
+                    a {
                         border: 0;
+                        text-decoration: none;
                         outline: 0;
                         padding: 10px 30px;
                         border-radius: 50px;

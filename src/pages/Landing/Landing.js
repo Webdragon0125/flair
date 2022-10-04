@@ -48,12 +48,16 @@ const Landing = () => {
 
   const [value, setValue] = React.useState(dayjs('2022-04-07'));
 
+  useEffect(() => {
+
+  }, [])
+
   const options = [
-    { label: 'The Shawshank Redemption', year: 1994 },
-    { label: 'The Godfather', year: 1972 },
-    { label: 'The Godfather: Part II', year: 1974 },
-    { label: 'The Dark Knight', year: 2008 },
-    { label: '12 Angry Men', year: 1957 },
+    { label: 'Toronto', year: 1994 },
+    { label: 'New York', year: 1972 },
+    { label: 'Edmonton', year: 1974 },
+    { label: 'BeiJing', year: 2008 },
+    { label: 'Tokyo', year: 1957 },
   ];
 
   const wrapperClicked = (e) => {
@@ -66,7 +70,9 @@ const Landing = () => {
         <Inform />
         <Header props={HEADER} />
         <div className="search-for">
-          <h1>Search for low prices on airfare and more</h1>
+          <h1 class="ml6">
+            Search for low prices from an airfare and more
+          </h1>
         </div>
         <div className="trip-kind-and-person">
           <div className="trip-kind">
