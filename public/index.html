@@ -15,6 +15,7 @@
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -39,6 +40,7 @@
 
       body {
         overflow-x: hidden;
+        transition: all 1s;
       }
     </style>
   </head>
@@ -56,4 +58,23 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+
+    var one = "#ffffff";
+		two = "#ADFF99";
+    $(window).on("scroll touchmove", function() {
+      if ($(document).scrollTop() >= $("#header").position().top) {
+        $('body').css('background', 'white');
+      };
+      if ($(document).scrollTop() > $("#explore-more-deals").position().top) {
+          $('body').css('background', two);
+      };
+      if ($(document).scrollTop() > $("#get-ready-fly").position().top) {
+          $('body').css('background', 'white');
+      };
+      if ($(document).scrollTop() > $("#where-we-fly").position().top) {
+          $('body').css('background', two);
+      };
+    });
+  </script>
 </html>

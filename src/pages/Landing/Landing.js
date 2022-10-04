@@ -1,7 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import TextField from '@mui/material/TextField';
+import anime from 'animejs/lib/anime.es';
 import { Link } from "react-router-dom";
 import Autocomplete from '@mui/material/Autocomplete';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Stack from '@mui/material/Stack';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
@@ -49,7 +52,24 @@ const Landing = () => {
   const [value, setValue] = React.useState(dayjs('2022-04-07'));
 
   useEffect(() => {
-
+    AOS.init();
+    AOS.refresh();
+    anime.timeline({loop: true})
+    .add({
+      targets: '.ml6 .letter',
+      scale: [4,1],
+      opacity: [0,1],
+      translateZ: 0,
+      easing: "easeOutExpo",
+      duration: 950,
+      delay: (el, i) => 70*i
+    }).add({
+      targets: '.ml6',
+      opacity: 0,
+      duration: 1000,
+      easing: "easeOutExpo",
+      delay: 1000
+    });
   }, [])
 
   const options = [
@@ -71,7 +91,52 @@ const Landing = () => {
         <Header props={HEADER} />
         <div className="search-for">
           <h1 class="ml6">
-            Search for low prices from an airfare and more
+            <span className="letter">S</span>
+            <span className="letter">e</span>
+            <span className="letter">a</span>
+            <span className="letter">r</span>
+            <span className="letter">c</span>
+            <span className="letter">h</span>
+            <span className="letter"> </span>
+            <span className="letter">f</span>
+            <span className="letter">o</span>
+            <span className="letter">r</span>
+            <span className="letter"> </span>
+            <span className="letter">l</span>
+            <span className="letter">o</span>
+            <span className="letter">w</span>
+            <span className="letter"> </span>
+            <span className="letter">p</span>
+            <span className="letter">r</span>
+            <span className="letter">i</span>
+            <span className="letter">c</span>
+            <span className="letter">e</span>
+            <span className="letter">s</span>
+            <span className="letter"> </span>
+            <span className="letter">f</span>
+            <span className="letter">r</span>
+            <span className="letter">o</span>
+            <span className="letter">m</span>
+            <span className="letter"> </span>
+            <span className="letter">a</span>
+            <span className="letter">n</span>
+            <span className="letter"> </span>
+            <span className="letter">a</span>
+            <span className="letter">i</span>
+            <span className="letter">r</span>
+            <span className="letter">f</span>
+            <span className="letter">a</span>
+            <span className="letter">r</span>
+            <span className="letter">e</span>
+            <span className="letter"> </span>
+            <span className="letter">a</span>
+            <span className="letter">n</span>
+            <span className="letter">d</span>
+            <span className="letter"> </span>
+            <span className="letter">m</span>
+            <span className="letter">o</span>
+            <span className="letter">r</span>
+            <span className="letter">e</span>
           </h1>
         </div>
         <div className="trip-kind-and-person">
@@ -144,10 +209,10 @@ const Landing = () => {
               Trending searches
             </div>
             <div className="choose-wait-childs">
-              <div>
+              <div data-aos="fade-left" data-aos-duration='1000'>
                 edmonton to vancouver
               </div>
-              <div>
+              <div data-aos="fade-left" data-aos-duration='1000'>
                 edmonton to vancouver
               </div>
             </div>
@@ -155,7 +220,7 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="sun-of-beach">
+      <div className="sun-of-beach" id='explore-more-deals'>
         <p className="title">Explore more deals</p>
         <Link to='/book'><img src={IMG_BACK1} alt=''></img></Link>
       </div>
@@ -169,19 +234,21 @@ const Landing = () => {
           </select>
         </div>
         <div className="items">
-          {BEST_DEAL.map((item, index) => (
-            <City
-              props={{
-                ...item,
-                name: "Toronto to " + item.name,
-              }}
-              key={index}
-            ></City>
-          ))}
+          <div className="items-div">
+            {BEST_DEAL.map((item, index) => (
+              <City
+                props={{
+                  ...item,
+                  name: "Toronto to " + item.name,
+                }}
+                key={index}
+              ></City>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="get-ready-fly">
+      <div className="get-ready-fly" id='get-ready-fly'>
         <div className="get-ready-fly-content">
           <h1>Get ready to fly!</h1>
           <h2>Here's some info on our jobs they are brand new!</h2>
@@ -205,7 +272,7 @@ const Landing = () => {
         </div>
       </div>
       <WhereWeFly img={IMG_MAP}>
-        <div className="content">
+        <div className="content" id='where-we-fly'>
           <h1>Where we fly</h1>
           <p>
             We are growing fast. With several exciting routes Flair files to

@@ -75,6 +75,10 @@ export const Wrapper = styled.div`
           border: 0;
           font-size: 18px;
           outline: 0;
+          border-bottom: 1px solid black;
+          box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 40%);
+          border-radius: 5px;
+          padding: 10px 20px;
         }
       }
     }
@@ -84,10 +88,14 @@ export const Wrapper = styled.div`
     }
     .search-for {
       padding: 50px 50px 30px 50px;
+      @media screen and (min-width: 1130px) {
+        margin-bottom: 200px;
+      }
       h1 {
-        font-size: 50px;
+        font-size: 70px;
         font-weight: 900;
         color: #101010;
+        font-family: 'avatar-bold';
         @media screen and (max-width: 1130px) {
           font-size: 40px;
         }
@@ -110,7 +118,7 @@ export const Wrapper = styled.div`
       align-items: center;
       gap: 20px;
       flex-wrap: wrap;
-      margin: 0 30px;
+      margin: 50px 30px;
       .search-position {
         display: flex;
         justify-content: center;
@@ -139,6 +147,7 @@ export const Wrapper = styled.div`
     .search-button-contain-div {
       display: flex;
       margin: 50px 100px 50px 100px;
+      padding: 50px 0;
       justify-content: space-between;
       align-items: center;
       gap: 20px;
@@ -236,6 +245,8 @@ export const Wrapper = styled.div`
         outline: 0;
         font-weight: bold;
         border-bottom: 1px solid black;
+        box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 40%);
+        border-radius: 5px;
       }
     }
 
@@ -243,8 +254,16 @@ export const Wrapper = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 30px;
+
+      .items-div {
+        width: 90%;
+        padding: 0 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
     }
   }
 

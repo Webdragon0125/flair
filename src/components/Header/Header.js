@@ -32,7 +32,7 @@ const Header = ({ props }) => {
   }, [respFlag]);
 
   return (
-    <Wrapper respFlag={respFlag}>
+    <Wrapper respFlag={respFlag} id='header'>
       <div className="logo">
         <img src={IMG_LOGO}></img>
       </div>
