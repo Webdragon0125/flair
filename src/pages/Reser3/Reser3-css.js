@@ -280,7 +280,7 @@ export const Wrapper = styled.div`
     .anoun {
         & > div:nth-child(1) {
             max-width: ${p => p.theme.maxWidth};
-            margin: 30px 100px;
+            margin: 30px auto;
             .bold {
                 font-family: 'avatar-bold';
                 font-size: 30px;
