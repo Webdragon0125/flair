@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     @media screen and (min-width: 1920px) {
-        transform: scale(1.4);
+        /* transform: scale(1.4); */
     }
     position: relative;
     width: 200px;
@@ -15,12 +15,18 @@ export const Wrapper = styled.div`
             width: 20px;
         }
         span {
-            font-size: 20px;
+            font-size: 30px;
+            font-family: 'avatar-bold';
+            @media screen and (max-width: 500px) {
+              font-size: 20px;
+            }
         }
     }
     .select-items {
         position: absolute;
-        width: 400px;
+        @media screen and (min-width: 450px) {
+            width: 350px;
+        }
         border: 1px solid ${p => p.theme.borderColor1};
         padding: 10px;
         background-color: white;
@@ -28,12 +34,10 @@ export const Wrapper = styled.div`
         @media screen and (max-width: 768px){
             left: -200px;
         }
-        @media screen and (max-width: 450px){
-            width: 280px;
-            left: -150px;
+        @media screen and (max-width: 500px){
+            left: -300px;
         }
         @media screen and (max-width: 364px){
-            width: 280px;
             left: -200px;
         }
         .item {

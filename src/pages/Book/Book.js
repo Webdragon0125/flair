@@ -42,40 +42,44 @@ const Book = () => {
               <Ticket props={item} key={index}></Ticket>
               <PlanTickets></PlanTickets>
               <div className='inform1'>
-                <p>Prices are one-way, per person and include all taxes and fees</p>
-                <PromoCode></PromoCode>
+                <div>
+                  <p>Prices are one-way, per person and include all taxes and fees</p>
+                  <PromoCode></PromoCode>
+                </div>
               </div>
               <div className='ticket-infos'>
-                <div className='ticket-infos-div'>
-                  {
-                    TICKETINFO.map((item, index) => (
-                      <div className='ticket-item' style={{border: item.isOpen ? '' : 0}}>
-                        <TicketInfo props={{...item, isOpen: item.isOpen}} key={index}></TicketInfo>
-                        {
-                          item.isOpen ? (
-                            <React.Fragment>
-                              <div className='bundles'>
-                                <h1>Choose a bundle</h1>
-                                <div className='bundle-items'>
-                                  {
-                                    BUNDLE.map((item, index) => (
-                                      <Bundle 
-                                        props={{...item, checked: index === bundleFlag ? true : false, setBundle:setBundleFlag, bundle: index}}
-                                        key={index}
-                                      ></Bundle>
-                                    ))
-                                  }
+                <div>
+                  <div className='ticket-infos-div'>
+                    {
+                      TICKETINFO.map((item, index) => (
+                        <div className='ticket-item' style={{border: item.isOpen ? '' : 0}}>
+                          <TicketInfo props={{...item, isOpen: item.isOpen}} key={index}></TicketInfo>
+                          {
+                            item.isOpen ? (
+                              <React.Fragment>
+                                <div className='bundles'>
+                                  <h1>Choose a bundle</h1>
+                                  <div className='bundle-items'>
+                                    {
+                                      BUNDLE.map((item, index) => (
+                                        <Bundle 
+                                          props={{...item, checked: index === bundleFlag ? true : false, setBundle:setBundleFlag, bundle: index}}
+                                          key={index}
+                                        ></Bundle>
+                                      ))
+                                    }
+                                  </div>
                                 </div>
-                              </div>
-                              <div className='continue'>
-                                <Link to='/reser1'>Continue</Link>
-                              </div>
-                            </React.Fragment>
-                          ) : null
-                        }
-                      </div>
-                    ))
-                  }
+                                <div className='continue'>
+                                  <Link to='/reser1'>Continue</Link>
+                                </div>
+                              </React.Fragment>
+                            ) : null
+                          }
+                        </div>
+                      ))
+                    }
+                  </div>
                 </div>
               </div>
             </>

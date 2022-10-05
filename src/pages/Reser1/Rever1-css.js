@@ -2,49 +2,52 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     .select-flight-div {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin: 20px 100px;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin-top: 100px;
-        .label-flight-div {
-            font-family: 'avatar-bold';
-            font-size: 25px;
-            @media screen and (max-width: 978px) {
-                width: 100%;
-                text-align: center;
-            }
-        }
-        @media screen and (max-width: 1140px) {
-            margin: 20px 20px;
-        }
-        @media screen and (max-width: 978px) {
-            
-        }
-        .select-flight {
+        & > div:nth-child(1) {
+            max-width: ${p => p.theme.maxWidth};
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
+            margin: 20px auto;
             gap: 20px;
             flex-wrap: wrap;
-            .to-email {
-                color: ${p => p.theme.themeColor1};
+            margin-top: 100px;
+            .label-flight-div {
                 font-family: 'avatar-bold';
-                @media screen and (max-width: 600px) {
+                font-size: 25px;
+                @media screen and (max-width: 978px) {
                     width: 100%;
                     text-align: center;
                 }
             }
-            .price {
-                a {
-                    color: black;
-                }
-                p {
-                    font-family: 'avatar-bold';
+            @media screen and (max-width: 1140px) {
+                margin: 20px 20px;
+            }
+            @media screen and (max-width: 978px) {
+                
+            }
+            .select-flight {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                flex-wrap: wrap;
+                .to-email {
                     color: ${p => p.theme.themeColor1};
-                    font-size: 25px;
+                    font-family: 'avatar-bold';
+                    @media screen and (max-width: 600px) {
+                        width: 100%;
+                        text-align: center;
+                    }
+                }
+                .price {
+                    a {
+                        color: black;
+                    }
+                    p {
+                        font-family: 'avatar-bold';
+                        color: ${p => p.theme.themeColor1};
+                        font-size: 25px;
+                    }
                 }
             }
         }

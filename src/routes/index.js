@@ -4,6 +4,9 @@ import { Routes, Route } from "react-router-dom";
 import Landing from "../pages/Landing/Landing";
 import Book from "../pages/Book/Book";
 import Reser1 from "../pages/Reser1/Reser1";
+import Reser2 from "../pages/Reser2/Reser2";
+import Reser3 from "../pages/Reser3/Reser3";
+import Travelflex from "../pages/Travelflex/Travelflex";
 
 const Router = () => {
   return (
@@ -11,6 +14,9 @@ const Router = () => {
       <Route path="/" element={<Landing></Landing>}></Route>
       <Route path="/book" element={<Book></Book>}></Route>
       <Route path="/reser1" element={<Reser1></Reser1>}></Route>
+      <Route path='/reser2' element={<Reser2></Reser2>}></Route>
+      <Route path='/reser3' element={<Reser3></Reser3>}></Route>
+      <Route path='/travelflex' element={<Travelflex></Travelflex>}></Route>
       <Route path="*" element={<h1>404 Page</h1>}></Route>
     </Routes>
   );

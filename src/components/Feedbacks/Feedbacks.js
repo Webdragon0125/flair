@@ -67,14 +67,21 @@ const Wrapper = styled.div`
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   font-size: 14px;
   color: #000;
-  margin: 0;
+  margin: auto;
   padding: 0;
   position: relative;
   height: 100%;
   padding: 50px;
+  max-width: ${p => p.theme.maxWidth};
 `;
 
 const CustomSwiperSlide = styled(SwiperSlide)`
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  
   cursor: pointer;
   height: 350px;
   display: flex;

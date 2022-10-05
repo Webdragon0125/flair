@@ -55,26 +55,28 @@ const Reser1 = () => {
         <Wrapper>
             <Inform></Inform>
             <Header props={HEADER}></Header>
-            <ReverMap></ReverMap>
-            <div className='select-flight-div'> 
-                <p className='label-flight-div'>selected flight</p>
-                <div className='select-flight'>
-                    <Link to='#' className='to-email'>Enter your email address or phone number to save flight ></Link>
-                    <div className='price'>
-                        <p>$340.00 Total</p>
-                        <Link to='#'>see price breakdown</Link>
+            <ReverMap props={{current: 1}}></ReverMap>
+            <div className='select-flight-div'>
+                <div>
+                    <p className='label-flight-div'>selected flight</p>
+                    <div className='select-flight'>
+                        <Link to='#' className='to-email'>Enter your email address or phone number to save flight {'>'}</Link>
+                        <div className='price'>
+                            <p>$340.00 Total</p>
+                            <Link to='#'>see price breakdown</Link>
+                        </div>
+                        <PromoCode></PromoCode>
                     </div>
-                    <PromoCode></PromoCode>
                 </div>
             </div>
             <div className='ticket-infos'>
                 <div className='ticket-infos-div'>
                     {
-                    TICKETINFO.map((item, index) => (
-                        <div className='ticket-item' style={{border: ''}}>
-                            <TicketInfo1 props={{...item, isOpen: false}} key={index}></TicketInfo1>
-                        </div>
-                    ))
+                        TICKETINFO.map((item, index) => (
+                            <div className='ticket-item' style={{border: ''}}>
+                                <TicketInfo1 props={{...item, isOpen: false}} key={index}></TicketInfo1>
+                            </div>
+                        ))
                     }
                 </div>
             </div>

@@ -9,6 +9,7 @@ import "./App.css";
 
 const App = () => {
   const theme = {
+    maxWidth: '1320px',
     themeColor: "#ADFF99",
     themeColor1: "#8C0AC8",
     fontColor: "black",

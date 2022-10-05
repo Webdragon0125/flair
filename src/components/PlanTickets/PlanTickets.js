@@ -28,83 +28,89 @@ const PlanTickets = () => {
 
     return (
         <Wrapper>
-            <img className='control-swiper prev' src={IMG_PREV} alt='prev' onClick={func_prevSlide}></img>
-            <img className='control-swiper next' src={IMG_NEXT} alt='next' onClick={func_nextSlide}></img>
-            <div className='myswiper-div'>
-                <Swiper
-                    onSwiper={s=>{
-                        setMySwiper(s);
-                    }}
-                    grabCursor={true}
-                    className="mySwiper"
-                    breakpoints={{
-                        400: {
-                            slidesPerView: 1,
-                            spaceBetween: 10,
-                        },
-                        600: {
-                            slidesPerView: 2,
-                            spaceBetween: 10,
-                        },
-                        800: {
-                            slidesPerView: 4,
-                            spaceBetween: 10,
-                        },
-                        1000: {
-                            slidesPerView: 5,
-                            spaceBetween: 10,
-                        },
-                        1300: {
-                            slidesPerView: 6,
-                            spaceBetween: 10,
-                        },
-                        1600: {
-                            slidesPerView: 7,
-                            spaceBetween: 10,
-                        },
-                    }}
-                >
-                    {
-                        PLANTICKETS.map((item, index) => (
-                            <CustomSwiperSlide key={index}>
-                                <p>{item.date}</p>
-                                <p>${item.price}</p>
-                                <p>${item.more + ' more'}</p>
-                            </CustomSwiperSlide>
-                        ))
-                    }
-                </Swiper>
+            <div>
+                <img className='control-swiper prev' src={IMG_PREV} alt='prev' onClick={func_prevSlide}></img>
+                <img className='control-swiper next' src={IMG_NEXT} alt='next' onClick={func_nextSlide}></img>
+                <div className='myswiper-div'>
+                    <Swiper
+                        onSwiper={s=>{
+                            setMySwiper(s);
+                        }}
+                        grabCursor={true}
+                        className="mySwiper"
+                        breakpoints={{
+                            400: {
+                                slidesPerView: 1,
+                                spaceBetween: 10,
+                            },
+                            600: {
+                                slidesPerView: 2,
+                                spaceBetween: 10,
+                            },
+                            800: {
+                                slidesPerView: 4,
+                                spaceBetween: 10,
+                            },
+                            1000: {
+                                slidesPerView: 5,
+                                spaceBetween: 10,
+                            },
+                            1300: {
+                                slidesPerView: 6,
+                                spaceBetween: 10,
+                            },
+                            1600: {
+                                slidesPerView: 7,
+                                spaceBetween: 10,
+                            },
+                        }}
+                    >
+                        {
+                            PLANTICKETS.map((item, index) => (
+                                <CustomSwiperSlide key={index}>
+                                    <p>{item.date}</p>
+                                    <p>${item.price}</p>
+                                    <p>${item.more + ' more'}</p>
+                                </CustomSwiperSlide>
+                            ))
+                        }
+                    </Swiper>
+                </div>
             </div>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-    position: relative;
-    .myswiper-div {
-        padding: 50px 100px;
-        @media screen and (max-width: 450px) {
-            padding: 50px 20px;
+    & > div:nth-child(1) {
+        max-width: ${p => p.theme.maxWidth};
+        margin: auto;
+        position: relative;
+        .myswiper-div {
+            padding: 50px 100px;
+            @media screen and (max-width: 450px) {
+                padding: 50px 20px;
+            }
         }
-    }
-    .control-swiper {
-        position: absolute;
-        width: 30px;
-        height: 30px;
-    }
-    .control-swiper.prev {
-        left: 30px;
-        top: calc(50% - 15px);
-        @media screen and (max-width: 450px) {
-            display: none;
+        .control-swiper {
+            position: absolute;
+            width: 30px;
+            height: 30px;
         }
-    }
-
-    .control-swiper.next {
-        right: 30px;
-        top: calc(50% - 15px);
-        @media screen and (max-width: 450px) {
-            display: none;
+        .control-swiper.prev {
+            left: 30px;
+            top: calc(50% - 15px);
+            @media screen and (max-width: 450px) {
+                display: none;
+            }
+        }
+    
+        .control-swiper.next {
+            right: 30px;
+            top: calc(50% - 15px);
+            @media screen and (max-width: 450px) {
+                display: none;
+            }
         }
     }
 `

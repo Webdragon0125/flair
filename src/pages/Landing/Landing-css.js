@@ -33,6 +33,24 @@ export const Wrapper = styled.div`
   position: relative;
 
   .landing-first {
+
+
+    @keyframes colorchange {
+      0% {
+        background: white;
+      }
+      50% {
+        background: ${p => p.theme.themeColor};
+      }
+      100% {
+        background: white;
+      }
+    }
+    animation: colorchange 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+
     position: relative;
     background-position: center;
     background-attachment: fixed; 
@@ -44,199 +62,219 @@ export const Wrapper = styled.div`
       background-size: auto 100%;
       background-position: right;
     }
-
     width: 100%;
     min-height: 100vh;
     z-index: 0;
     .trip-kind-and-person {
-      margin: 20px 100px;
-      @media screen and (max-width: 768px) {
-        margin: 20px 20px;
+      @media screen and (max-width: 600px) {
+        display: flex;
+        justify-content: center;
       }
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 20px;
-      width: min-content;
-      @media screen and (max-width: 768px) {
-        width: 90%;
-        justify-content: space-between;
-      }
-      .trip-kind {
+      & > div:nth-child(1) {
+        width: 100%;
+        max-width: ${p => p.theme.maxWidth};
+        margin-top: 20px;
+        @media screen and (min-width: 1400px) {
+          margin-left: calc((100vw - 1320px) / 2);
+        }
+        @media screen and (max-width: 1400px) {
+          margin-left: 50px;
+        }
+        @media screen and (max-width: 600px) {
+          margin-left: 0px;
+        }
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 20px;
-        & > img:nth-child(1) {
-          width: 30px;
+        width: min-content;
+        @media screen and (max-width: 768px) {
+          width: 90%;
+          justify-content: space-between;
         }
-        @media screen and (min-width: 1920px) {
-          transform: scale(1.6);
-        }
-        select {
-          border: 0;
-          font-size: 18px;
-          outline: 0;
-          border-bottom: 1px solid black;
-          box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 40%);
-          border-radius: 5px;
-          padding: 10px 20px;
+        .trip-kind {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 20px;
+          & > img:nth-child(1) {
+            width: 30px;
+            @media screen and (max-width: 500px) {
+              display: none;
+            }
+          }
+          select {
+            border: 0;
+            font-size: 18px;
+            outline: 0;
+            border-bottom: 1px solid black;
+            box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 40%);
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-family: 'avatar-bold';
+            font-size: 30px;
+            @media screen and (max-width: 500px) {
+              font-size: 25px;
+            }
+          }
         }
       }
     }
 
     .search-for {
-      font-weight: 900;
-    }
-    .search-for {
-      padding: 50px 50px 30px 50px;
-      @media screen and (max-width: 1130px) {
-        padding: 20px 20px 10px 20px;
-      }
-      @media screen and (min-width: 1920px) {
-        margin-bottom: 200px;
-      }
-      
-      h1 {
-        font-size: 70px;
+      & > div:nth-child(1) {
+        max-width: ${p =>p.theme.maxWidth};
+        margin: auto;
         font-weight: 900;
-        color: #101010;
-        font-family: 'avatar-bold';
-        @media screen and (max-width: 1130px) {
-          font-size: 40px;
+        
+        @media screen and (min-height: 1080px) {
+          padding: 300px 50px 30px 50px;
         }
-        @media screen and (max-width: 768px) {
-          font-size: 30px;
+        @media screen and (max-height: 1080px) {
+          padding: 150px 50px 30px 50px;
         }
-        @media screen and (max-width: 500px) {
-          font-size: 25px;
+        @media screen and (max-height: 768px) {
+          padding: 50px 50px 30px 50px;
         }
-      }
-      ${(p) => {
-        return css`
-          @media screen and (max-width: ${(p) => p.theme.media1}) {
-            text-align: center;
+        /* @media screen and (max-width: 1130px) {
+          padding: 20px 20px 10px 20px;
+        } */
+        /* @media screen and (max-width: 1920px) { */
+        /* } */
+        h1 {
+          font-size: 60px;
+          font-weight: 900;
+          color: #101010;
+          font-family: 'avatar-bold';
+          @media screen and (max-width: 1130px) {
+            font-size: 40px;
           }
-        `;
-      }}
+          @media screen and (max-width: 768px) {
+            font-size: 30px;
+          }
+          @media screen and (max-width: 500px) {
+            font-size: 25px;
+          }
+        }
+        ${(p) => {
+          return css`
+            @media screen and (max-width: ${(p) => p.theme.media1}) {
+              text-align: center;
+            }
+          `;
+        }}
+      }
     }
 
     .search-input-div {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin: 50px 30px;
-      @media screen and (max-width: 1000px) {
-        margin:5px 30px;
-      }
-      @media screen and (min-width: 1920px) {
-        margin: 100px 30px;
-      }
-      .search-position {
+      & > div:nth-child(1) {
+        max-width: ${p => p.theme.maxWidth};
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        position: relative;
-        gap: 30px;
-        @media screen and (max-width: 670px) {
-          flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 50px auto;
+        @media screen and (max-width: 1000px) {
+          margin:5px 30px;
         }
-        @media screen and (min-width: 1920px) {
-          transform: scale(1.6);
-        }
-        img {
-          position: absolute;
-          background-color: black;
-          width: 25px;
-          padding: 10px;
-          border-radius: 50px;
+        .search-position {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: relative;
+          gap: 30px;
           @media screen and (max-width: 670px) {
-            transform: rotate(-90deg);
+            flex-direction: column;
+          }
+          img {
+            position: absolute;
+            background-color: black;
+            width: 25px;
+            padding: 10px;
+            border-radius: 50px;
+            @media screen and (max-width: 670px) {
+              transform: rotate(-90deg);
+            }
           }
         }
-      }
-      .search-date {
-        display: flex;
-        @media screen and (min-width: 1920px) {
-          transform: scale(1.6);
+        .search-date {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 10px;
         }
       }
     }
 
     .search-button-contain-div {
-      display: flex;
-      margin: 50px 100px 50px 100px;
-      padding: 50px 0;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      @media screen and (max-width: 768px) {
-        margin: 0px 20px;
-        padding: 10px 0;
-      }
-      @media screen and (min-width: 1920px) {
-        margin: 200px 100px 0 100px;
-      }
-      button {
-        background-color: ${p => p.theme.themeColor1};
-        border: 0;
-        color: white;
-        font-size: 20px;
-        padding: 10px 100px;
-        border-radius: 50px;
-        position: relative;
-        @media screen and (max-width: 1180px) {
-          margin: auto;
-        }
-        img {
-          position: absolute;
-          height: 30px;
-          right: 20px;
-          top: calc(50% - 15px);
-        }
-        @media screen and (min-width: 1920px) {
-          transform: scale(1.6);
-          margin-left: 100px;
-        }
-      }
-      
-      .choose-what {
-        @media screen and (min-width: 1920px) {
-          transform: scale(1.6);
-          margin-right: 150px;
-        }
-        @media screen and (max-width: 1180px) {
-          margin: auto;
-        }
+      & > div:nth-child(1) {
+        max-width: ${p => p.theme.maxWidth};
         display: flex;
-        justify-content: center;
+        margin: 50px auto;
+        padding: 50px 0;
+        justify-content: space-between;
         align-items: center;
         gap: 20px;
-        font-weight: 900;
-        font-size: 22px;
         flex-wrap: wrap;
-        @media screen and (max-width: 500px) {
-          gap: 5px;
+        @media screen and (max-width: 1500px) {
+          padding: 0;
         }
-        div {
-          white-space: nowrap;
+        @media screen and (max-width: 600px) {
+          margin: 0px auto;
+          padding: 0px 0;
         }
-        .choose-wait-childs {
+        button {
+          background-color: ${p => p.theme.themeColor1};
+          border: 0;
+          color: white;
           font-size: 20px;
+          padding: 10px 100px;
+          border-radius: 50px;
+          position: relative;
+          @media screen and (max-width: 1180px) {
+            margin: auto;
+          }
+          img {
+            position: absolute;
+            height: 30px;
+            right: 20px;
+            top: calc(50% - 15px);
+          }
+        }
+        
+        .choose-what {
+          @media screen and (max-width: 1180px) {
+            margin: auto;
+          }
           display: flex;
           justify-content: center;
           align-items: center;
           gap: 20px;
+          font-weight: 900;
+          font-size: 22px;
           flex-wrap: wrap;
-          div {
-            background-color: ${p => p.theme.themeColor};
-            padding: 5px 10px;
-          }
           @media screen and (max-width: 500px) {
             gap: 5px;
+          }
+          div {
+            white-space: nowrap;
+          }
+          .choose-wait-childs {
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            div {
+              background-color: ${p => p.theme.themeColor};
+              padding: 5px 10px;
+            }
+            @media screen and (max-width: 500px) {
+              gap: 5px;
+            }
           }
         }
       }
@@ -286,10 +324,12 @@ export const Wrapper = styled.div`
         border-bottom: 1px solid black;
         box-shadow: 1px 1px 1px 1px rgb(0 0 0 / 40%);
         border-radius: 5px;
+        padding: 10px 20px;
       }
     }
 
     .items {
+      max-width: ${p => p.theme.maxWidth};
       display: flex;
       justify-content: center;
       align-items: center;
@@ -298,7 +338,7 @@ export const Wrapper = styled.div`
         width: 90%;
         padding: 0 30px;
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         flex-wrap: wrap;
         gap: 30px;

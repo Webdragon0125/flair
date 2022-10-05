@@ -87,137 +87,197 @@ const Landing = () => {
   return (
     <Wrapper onClick={wrapperClicked} bgImg={IMG_BACK}>
       <div className="landing-first">
-        <Inform />
-        <Header props={HEADER} />
-        <div className="search-for">
-          <h1 class="ml6">
-            <span className="letter">S</span>
-            <span className="letter">e</span>
-            <span className="letter">a</span>
-            <span className="letter">r</span>
-            <span className="letter">c</span>
-            <span className="letter">h</span>
-            <span className="letter"> </span>
-            <span className="letter">f</span>
-            <span className="letter">o</span>
-            <span className="letter">r</span>
-            <span className="letter"> </span>
-            <span className="letter">l</span>
-            <span className="letter">o</span>
-            <span className="letter">w</span>
-            <span className="letter"> </span>
-            <span className="letter">p</span>
-            <span className="letter">r</span>
-            <span className="letter">i</span>
-            <span className="letter">c</span>
-            <span className="letter">e</span>
-            <span className="letter">s</span>
-            <span className="letter"> </span>
-            <span className="letter">f</span>
-            <span className="letter">r</span>
-            <span className="letter">o</span>
-            <span className="letter">m</span>
-            <span className="letter"> </span>
-            <span className="letter">a</span>
-            <span className="letter">n</span>
-            <span className="letter"> </span>
-            <span className="letter">a</span>
-            <span className="letter">i</span>
-            <span className="letter">r</span>
-            <span className="letter">f</span>
-            <span className="letter">a</span>
-            <span className="letter">r</span>
-            <span className="letter">e</span>
-            <span className="letter"> </span>
-            <span className="letter">a</span>
-            <span className="letter">n</span>
-            <span className="letter">d</span>
-            <span className="letter"> </span>
-            <span className="letter">m</span>
-            <span className="letter">o</span>
-            <span className="letter">r</span>
-            <span className="letter">e</span>
-          </h1>
-        </div>
-        <div className="trip-kind-and-person">
-          <div className="trip-kind">
-            <img src={IMG_BOTH_DIR} alt=''></img>
-            <select>
-              <option>round trip</option>
-              <option>one-way flight</option>
-            </select>
+          <Inform />
+          <Header props={HEADER} />
+          <div className="search-for">
+            <div>
+              <h1 class="ml6">
+                <span className="letter">S</span>
+                <span className="letter">e</span>
+                <span className="letter">a</span>
+                <span className="letter">r</span>
+                <span className="letter">c</span>
+                <span className="letter">h</span>
+                <span className="letter"> </span>
+                <span className="letter">f</span>
+                <span className="letter">o</span>
+                <span className="letter">r</span>
+                <span className="letter"> </span>
+                <span className="letter">l</span>
+                <span className="letter">o</span>
+                <span className="letter">w</span>
+                <span className="letter"> </span>
+                <span className="letter">p</span>
+                <span className="letter">r</span>
+                <span className="letter">i</span>
+                <span className="letter">c</span>
+                <span className="letter">e</span>
+                <span className="letter">s</span>
+                <span className="letter"> </span>
+                <span className="letter">f</span>
+                <span className="letter">r</span>
+                <span className="letter">o</span>
+                <span className="letter">m</span>
+                <span className="letter"> </span>
+                <span className="letter">a</span>
+                <span className="letter">n</span>
+                <span className="letter"> </span>
+                <span className="letter">a</span>
+                <span className="letter">i</span>
+                <span className="letter">r</span>
+                <span className="letter">f</span>
+                <span className="letter">a</span>
+                <span className="letter">r</span>
+                <span className="letter">e</span>
+                <span className="letter"> </span>
+                <span className="letter">a</span>
+                <span className="letter">n</span>
+                <span className="letter">d</span>
+                <span className="letter"> </span>
+                <span className="letter">m</span>
+                <span className="letter">o</span>
+                <span className="letter">r</span>
+                <span className="letter">e</span>
+              </h1>
+            </div>
           </div>
-          <SelPassenger></SelPassenger>
-          <div className="person"></div>
-        </div>
-        <div className="search-input-div">
-          <div className="search-position">
-            <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={options}
-              sx={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label="Edminton" sx={{
-              }} />}
-            />
-            <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={options}
-              sx={{ width: 300 }}
-              renderInput={(params) => <TextField {...params} label="Where to?" />}
-            />
-            <img src={IMG_BOTH_DIR_WHITE} alt=''></img>
+          <div className="trip-kind-and-person">
+            <div>
+              <div className="trip-kind">
+                <img src={IMG_BOTH_DIR} alt=''></img>
+                <select>
+                  <option>round trip</option>
+                  <option>one-way flight</option>
+                </select>
+              </div>
+              <SelPassenger></SelPassenger>
+              <div className="person"></div>
+            </div>
           </div>
-          <div className="search-date">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <Stack spacing={3}>
-                <DesktopDatePicker
-                  label="From"
-                  value={value}
-                  minDate={dayjs('2017-01-01')}
-                  onChange={(newValue) => {
-                    setValue(newValue);
+          <div className="search-input-div">
+            <div>
+              <div className="search-position">
+                <Autocomplete
+                  disablePortal
+                  id="combo-box-demo"
+                  options={options}
+                  sx={{ width: 300 }}
+                  renderInput={(params) => <TextField {...params} label="Edminton"
+                  sx={{
+                    '& .MuiAutocomplete-inputFocused': {
+                      fontSize: '30px',
+                      fontFamily: 'avatar-bold',
+                      '@media screen and (max-width: 500px)': {
+                        fontSize: '20px',
+                      }
+                    },
+                    '& .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
+                      fontSize: '30px',
+                      fontFamily: 'avatar-bold',
+                      color: 'black',
+                      '@media screen and (max-width: 500px)': {
+                        fontSize: '20px',
+                      }
+                    }
                   }}
-                  renderInput={(params) => <TextField {...params} 
-                    
                   />}
                 />
-              </Stack>
-            </LocalizationProvider>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <Stack spacing={3}>
-                <DesktopDatePicker
-                  label="To"
-                  value={value}
-                  minDate={dayjs('2017-01-01')}
-                  onChange={(newValue) => {
-                    setValue(newValue);
+                <Autocomplete
+                  disablePortal
+                  id="combo-box-demo"
+                  options={options}
+                  sx={{ width: 300 }}
+                  renderInput={(params) => <TextField {...params} label="Where to?"
+                  sx={{
+                    '& .MuiAutocomplete-inputFocused': {
+                      fontSize: '30px',
+                      fontFamily: 'avatar-bold',
+                      '@media screen and (max-width: 500px)': {
+                        fontSize: '20px',
+                      }
+                    },
+                    '& .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
+                      fontSize: '30px',
+                      fontFamily: 'avatar-bold',
+                      color: 'black',
+                      '@media screen and (max-width: 500px)': {
+                        fontSize: '20px',
+                      }
+                    }
                   }}
-                  renderInput={(params) => <TextField {...params} sx={{
-                    
-                  }} />}
+                  />}
+                  
                 />
-              </Stack>
-            </LocalizationProvider>
-          </div>
-        </div>
-        <div className="search-button-contain-div">
-          <button>search <img src={IMG_RIGHT} alt='' /></button>
-          <div className="choose-what">
-            <div className="choose-what-title">
-              Trending searches
-            </div>
-            <div className="choose-wait-childs">
-              <div>
-                edmonton to vancouver
+                <img src={IMG_BOTH_DIR_WHITE} alt=''></img>
               </div>
-              <div>
-                edmonton to vancouver
+              <div className="search-date">
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <Stack spacing={3}>
+                    <DesktopDatePicker
+                      label="From"
+                      value={value}
+                      minDate={dayjs('2017-01-01')}
+                      onChange={(newValue) => {
+                        setValue(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} 
+                      sx={{
+                        width: '300px',
+                        '& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
+                          fontSize: '30px',
+                          fontFamily: 'avatar-bold',
+                          '@media screen and (max-width: 500px)': {
+                            fontSize: '20px',
+                          }
+                        }
+                      }}
+                      />}
+                    />
+                  </Stack>
+                </LocalizationProvider>
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <Stack spacing={3}>
+                    <DesktopDatePicker
+                      label="To"
+                      value={value}
+                      minDate={dayjs('2017-01-01')}
+                      onChange={(newValue) => {
+                        setValue(newValue);
+                      }}
+                      renderInput={(params) => <TextField {...params} sx={{
+                        width: '300px',
+                        '& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
+                          fontSize: '30px',
+                          fontFamily: 'avatar-bold',
+                          '@media screen and (max-width: 500px)': {
+                            fontSize: '20px',
+                          }
+                        }
+                      }} />}
+                    />
+                  </Stack>
+                </LocalizationProvider>
+              </div>
+            </div>
+            </div>
+          <div className="search-button-contain-div">
+            <div>
+              <button>search <img src={IMG_RIGHT} alt='' /></button>
+              <div className="choose-what">
+                <div className="choose-what-title">
+                  Trending searches
+                </div>
+                <div className="choose-wait-childs">
+                  <div>
+                    edmonton to vancouver
+                  </div>
+                  <div>
+                    edmonton to vancouver
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
       </div>
 
       <div className="sun-of-beach" id='explore-more-deals'>
