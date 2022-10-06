@@ -162,8 +162,9 @@ const Landing = () => {
                   id="combo-box-demo"
                   options={options}
                   sx={{ width: 300 }}
-                  renderInput={(params) => <TextField {...params} label="Edminton"
+                  renderInput={(params) => <TextField {...params} label="Edmonton"
                   sx={{
+                    backgroundColor: 'white',
                     '& .MuiAutocomplete-inputFocused': {
                       fontSize: '30px',
                       fontFamily: 'avatar-bold',
@@ -189,6 +190,7 @@ const Landing = () => {
                   sx={{ width: 300 }}
                   renderInput={(params) => <TextField {...params} label="Where to?"
                   sx={{
+                    backgroundColor: 'white',
                     '& .MuiAutocomplete-inputFocused': {
                       fontSize: '30px',
                       fontFamily: 'avatar-bold',
@@ -222,6 +224,7 @@ const Landing = () => {
                       }}
                       renderInput={(params) => <TextField {...params} 
                       sx={{
+                        backgroundColor: 'white',
                         width: '300px',
                         '& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
                           fontSize: '30px',
@@ -245,6 +248,7 @@ const Landing = () => {
                         setValue(newValue);
                       }}
                       renderInput={(params) => <TextField {...params} sx={{
+                        backgroundColor: 'white',
                         width: '300px',
                         '& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
                           fontSize: '30px',
@@ -293,7 +297,7 @@ const Landing = () => {
           <p className="title">Enjoy our best deals from</p>
           <select>
             <option> Toronto </option>
-            <option> Edminton </option>
+            <option> Edmonton </option>
           </select>
         </div>
         <div className="items">

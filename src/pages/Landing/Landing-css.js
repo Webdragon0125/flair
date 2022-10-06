@@ -89,7 +89,6 @@ export const Wrapper = styled.div`
             padding: 10px 20px;
             font-family: 'avatar-bold';
             font-size: 30px;
-            background-color: transparent;
             option {
               background-color: transparent;
             }
@@ -284,6 +283,7 @@ export const Wrapper = styled.div`
             }
             @media screen and (max-width: 500px) {
               gap: 5px;
+              font-size: 12px;
             }
           }
         }
@@ -358,6 +358,8 @@ export const Wrapper = styled.div`
   }
 
   .get-ready-fly {
+    max-width: ${p => p.theme.maxWidth};
+    margin: auto;
     width: 100%;
     min-height: 500px;
     background-image: url(${IMG_STREAM}), url(${IMG_GET_READY_FLY});
@@ -486,6 +488,8 @@ export const Wrapper = styled.div`
 
 
 export const WhereWeFly = styled.div`
+  max-width: ${p => p.theme.maxWidth};
+  margin: auto;
   background-color: ${(p) => p.theme.mapColor};
   background-image: url(${(p) => p.img});
   background-repeat: no-repeat;
