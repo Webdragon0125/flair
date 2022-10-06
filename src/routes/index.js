@@ -8,6 +8,7 @@ import Reser1 from "../pages/Reser1/Reser1";
 import Reser2 from "../pages/Reser2/Reser2";
 import Reser3 from "../pages/Reser3/Reser3";
 import Reser5 from "../pages/Reser5/Reser5";
+import JoinFlair from "../pages/JoinFlair/JoinFlair";
 import Travelflex from "../pages/Travelflex/Travelflex";
 import SeatSelect from "../pages/SeatSelect/SeatSelect";
 
@@ -23,6 +24,7 @@ const Router = () => {
       <Route path='/reser5' element={<Reser5></Reser5>}></Route>
       <Route path='/travelflex' element={<Travelflex></Travelflex>}></Route>
       <Route path='/seat-select' element={<SeatSelect></SeatSelect>}></Route>
+      <Route path='/join-flair' element={<JoinFlair></JoinFlair>}></Route>
       <Route path="*" element={<h1>404 Page</h1>}></Route>
     </Routes>
   );

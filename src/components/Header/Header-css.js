@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    padding: 10px 0px;
+    padding: 10px 10px;
   
     .div-responsive {
       border: 0;
