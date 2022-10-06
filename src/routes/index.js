@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Landing from "../pages/Landing/Landing";
+import Landing1 from "../pages/Landing1/Landing1";
 import Book from "../pages/Book/Book";
 import Reser1 from "../pages/Reser1/Reser1";
 import Reser2 from "../pages/Reser2/Reser2";
@@ -14,6 +15,7 @@ const Router = () => {
   return (
     <Routes>
       <Route path="/" element={<Landing></Landing>}></Route>
+      <Route path="/landing1" element={<Landing1></Landing1>}></Route>
       <Route path="/book" element={<Book></Book>}></Route>
       <Route path="/reser1" element={<Reser1></Reser1>}></Route>
       <Route path='/reser2' element={<Reser2></Reser2>}></Route>

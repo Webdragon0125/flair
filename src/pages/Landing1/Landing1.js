@@ -24,7 +24,7 @@ import Footer from "../../components/Footer/Footer";
 import SelPassenger from "../../components/SelPassenger/SelPassenger";
 
 // Styled-components
-import { Wrapper, WhereWeFly } from "./Landing-css";
+import { Wrapper, WhereWeFly } from "./Landing1-css";
 
 // Images
 import IMG_BACK1 from "../../assets/back1.png";
@@ -43,7 +43,7 @@ import { CUSTOMERS } from "../../constant/CUSTOMERS";
 
 // Images
 
-const Landing = () => {
+const Landing1 = () => {
 
   const AppContextProps = useContext(AppContext);
 
@@ -262,10 +262,7 @@ const Landing = () => {
             </div>
           <div className="search-button-contain-div">
             <div>
-              <button>
-                search 
-                <img src={IMG_RIGHT} alt='' />
-              </button>
+              <button>search <img src={IMG_RIGHT} alt='' /></button>
               <div className="choose-what">
                 <div className="choose-what-title">
                   Trending searches
@@ -281,12 +278,12 @@ const Landing = () => {
               </div>
             </div>
           </div>
-        <div className="sun-of-beach" id='explore-more-deals'>
-          <p className="title">Explore more deals</p>
-          <Link to='/book'><img src={IMG_BACK1} alt=''></img></Link>
-        </div>
       </div>
 
+      <div className="sun-of-beach" id='explore-more-deals'>
+        <p className="title">Explore more deals</p>
+        <Link to='/book'><img src={IMG_BACK1} alt=''></img></Link>
+      </div>
 
       <div className="best-deals">
         <div>
@@ -354,4 +351,4 @@ const Landing = () => {
   );
 };
 
-export default Landing;
+export default Landing1;

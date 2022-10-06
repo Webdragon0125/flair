@@ -4,6 +4,29 @@ import IMG_GET_READY_FLY from "../../assets/get-ready-fly.png";
 import IMG_BACK1_RESP from '../../assets/back1-resp.png';
 
 export const Wrapper = styled.div`
+  /* animation-name: backgroundColorPalette;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	animation-timing-function: ease-in-out; 
+
+    @keyframes backgroundColorPalette {
+        0% {
+            background: #ee6055;
+        }
+        25% {
+            background: #60d394;
+        }
+        50% {
+            background: #aaf683;
+        }
+        75% {
+            background: #ffd97d;
+        }
+        100% {
+            background: #ff9b85;
+        }
+    } */
   display: flex;
   flex-direction: column;
   gap: 30px;
@@ -33,6 +56,7 @@ export const Wrapper = styled.div`
     background-attachment: fixed; 
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 30px;
 
     @media (max-width: 768px) {
       background-size: auto 100%;
@@ -89,10 +113,6 @@ export const Wrapper = styled.div`
             padding: 10px 20px;
             font-family: 'avatar-bold';
             font-size: 30px;
-            background-color: transparent;
-            option {
-              background-color: transparent;
-            }
             @media screen and (max-width: 500px) {
               font-size: 25px;
             }
@@ -106,14 +126,26 @@ export const Wrapper = styled.div`
         max-width: ${p =>p.theme.maxWidth};
         margin: auto;
         font-weight: 900;
+        
+        @media screen and (min-height: 1080px) {
+          padding: 300px 50px 30px 50px;
+        }
+        @media screen and (max-height: 1080px) {
+          padding: 150px 50px 30px 50px;
+        }
+        @media screen and (max-height: 768px) {
+          padding: 50px 50px 30px 50px;
+        }
+        /* @media screen and (max-width: 1130px) {
+          padding: 20px 20px 10px 20px;
+        } */
+        /* @media screen and (max-width: 1920px) { */
+        /* } */
         h1 {
           font-size: 60px;
           font-weight: 900;
           color: #101010;
           font-family: 'avatar-bold';
-          span {
-            font-family: 'avatar-bold';
-          }
           @media screen and (max-width: 1130px) {
             font-size: 40px;
           }
@@ -142,7 +174,7 @@ export const Wrapper = styled.div`
         align-items: center;
         gap: 20px;
         flex-wrap: wrap;
-        margin: 10px auto;
+        margin: 50px auto;
         @media screen and (max-width: 1000px) {
           margin:5px 30px;
         }
@@ -180,7 +212,7 @@ export const Wrapper = styled.div`
       & > div:nth-child(1) {
         max-width: ${p => p.theme.maxWidth};
         display: flex;
-        margin: 10px auto;
+        margin: 50px auto;
         padding: 50px 0;
         justify-content: space-between;
         align-items: center;
@@ -194,58 +226,16 @@ export const Wrapper = styled.div`
           padding: 0px 0;
         }
         button {
-          display: inline-block;
-          padding: .75rem 1.25rem;
-          border-radius: 10rem;
-          color: #fff;
-          text-transform: uppercase;
-          font-size: 1rem;
-          letter-spacing: .15rem;
-          transition: all .3s;
-          position: relative;
-          overflow: hidden;
-          z-index: 1;
-          border: 0;
-          outline: 0;
-          @media screen and (max-width: 500px) {
-            margin: auto
-          }
-          &:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: ${p => p.theme.themeColor1};
-            border-radius: 10rem;
-            z-index: -2;
-          }
-          &:before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0%;
-            height: 100%;
-            background-color: black;
-            opacity: 0.3;
-            transition: all .3s;
-            border-radius: 10rem;
-            z-index: -1;
-          }
-          &:hover {
-            color: #fff;
-            &:before {
-              width: 100%;
-            }
-          }
+          background-color: ${p => p.theme.themeColor1};
           border: 0;
           color: white;
           font-size: 20px;
           padding: 10px 100px;
           border-radius: 50px;
           position: relative;
+          @media screen and (max-width: 1180px) {
+            margin: auto;
+          }
           img {
             position: absolute;
             height: 30px;
@@ -291,13 +281,12 @@ export const Wrapper = styled.div`
     }
   }
   .sun-of-beach {
-    max-width: ${p => p.theme.maxWidth};
-    margin: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 30px;
+
     .title {
       font-size: 20px;
       font-weight: 700;
