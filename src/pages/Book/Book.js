@@ -85,22 +85,24 @@ const Book = () => {
             </>
           ))
         }
-      </div>
-      
+      </div>      
       <div className='annunciation'>
-        <div className='ann-index'>
-          <p>
-            Legal Notice
-          </p>
-          <p>
-            Prices are listed by person, in the original currency their revervation was made. Please <Link>click here</Link> for information on out policies, regulations and baggage fees. Prices on our website are valid if you purchase services in the same session. If you log off our website, prices may be different next time you log on. Our flights schedules are subject to change due to evolving circumstances related to COVID-19
-          </p>
-        </div>
-        <div className='ann-index'>
-          <p>Passport Requirement</p>
-          <p>
-            Passengers are responsible for obtaining valid travel documents (passport, visa or other required documents) that comply with the entry and exit requirements for domestic and international flights. Given that entry and exit requirements may change without notice, please consult <a href='https://www.travel.gc.ca' target='_blank'>www.travel.gc.ca</a> for more information.
-          </p>
+        <div>
+          <div className='ann-index'>
+            <p>
+              Legal Notice
+            </p>
+            <p>
+              Prices are listed by person, in the original currency their revervation was made. Please <Link>click here</Link> for information on out policies, regulations and baggage fees. Prices on our website are valid if you purchase services in the same session. If you log off our website, prices may be different next time you log on. Our flights schedules are subject to change due to evolving circumstances related to COVID-19
+            </p>
+          </div>
+          <div className='ann-index'>
+            <p>Passport Requirement</p>
+            <p>
+              Passengers are responsible for obtaining valid travel documents (passport, visa or other required documents) that comply with the entry and exit requirements for domestic and international flights. Given that entry and exit requirements may change without notice, please consult <a href='https://www.travel.gc.ca' target='_blank'>www.travel.gc.ca</a> for more information.
+            </p>
+          </div>
+
         </div>
       </div>
       <Footer></Footer>

@@ -70,76 +70,80 @@ const Reser1 = () => {
                 </div>
             </div>
             <div className='ticket-infos'>
-                <div className='ticket-infos-div'>
-                    {
-                        TICKETINFO.map((item, index) => (
-                            <div className='ticket-item' style={{border: ''}}>
-                                <TicketInfo1 props={{...item, isOpen: false}} key={index}></TicketInfo1>
-                            </div>
-                        ))
-                    }
+                <div>
+                    <div className='ticket-infos-div'>
+                        {
+                            TICKETINFO.map((item, index) => (
+                                <div className='ticket-item' style={{border: ''}}>
+                                    <TicketInfo1 props={{...item, isOpen: false}} key={index}></TicketInfo1>
+                                </div>
+                            ))
+                        }
+                    </div>
                 </div>
             </div>
             <div className='passenger-information-div'>
-                <h1 className='label'> passenger information </h1>
-                <div className='passenger-information'>
-                    <p className='passenger-name'> Raoul Bhatt </p>
-                    <p className='passenger-note'>
-                        <img src={IMG_NOTE} alt=''></img>
-                        <span>Note: Please ensure that the name listed matches the government issued photo ID that will be used to travel.</span>
-                    </p>
-                    <div className='forms'>
-                        <Box sx={{ width: '30%' }}>
-                            <FormControl fullWidth>
-                                <InputLabel id="demo-simple-select-label">Title*</InputLabel>
-                                <Select
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={age}
-                                    label="Title*"
-                                    onChange={handleChange}
-                                >
-                                    <MenuItem value={10}>Ten</MenuItem>
-                                    <MenuItem value={20}>Twenty</MenuItem>
-                                    <MenuItem value={30}>Thirty</MenuItem>
-                                </Select>
-                            </FormControl>
-                        </Box>
-                        <Box sx={{ width: '30%' }}>
-                            <TextField id="outlined-basic" label="First name" variant="outlined" fullWidth/>
-                        </Box>
-                        <Box sx={{ width: '30%' }}>
-                            <TextField id="outlined-basic" label="Last name" variant="outlined" fullWidth/>
-                        </Box>
-                        <Box sx={{ width: '30%' }}>
-                            <LocalizationProvider dateAdapter={AdapterDayjs}>
-                                <DesktopDatePicker
-                                    label="Date desktop"
-                                    inputFormat="MM/DD/YYYY"
-                                    onChange={dateChange}
-                                    renderInput={(params) => <TextField {...params} />}
-                                    sx={{
-
-                                    }}
-                                />
-                            </LocalizationProvider>
-                        </Box>
-                        <Box sx={{ width: '30%' }}>
-                            <TextField id="outlined-basic" label="Mobile number" variant="outlined" fullWidth/>
-                        </Box>
-                        <Box sx={{ width: '30%' }}>
-                            <TextField id="outlined-basic" label="Email" variant="outlined" fullWidth/>
-                        </Box>
-                    </div>
-                    <div className='receive-email-check'>
-                        <input type='checkbox' />
-                        <p>
-                            Yes, i want to receive emails from Flair and sms reminders on flight departures or changes
+                <div>
+                    <h1 className='label'> passenger information </h1>
+                    <div className='passenger-information'>
+                        <p className='passenger-name'> Raoul Bhatt </p>
+                        <p className='passenger-note'>
+                            <img src={IMG_NOTE} alt=''></img>
+                            <span>Note: Please ensure that the name listed matches the government issued photo ID that will be used to travel.</span>
                         </p>
-                    </div>
-                    <div className='access-request'>
-                        <Switch {...label} defaultChecked color="secondary" />
-                        <p> accessibility request </p>
+                        <div className='forms'>
+                            <Box sx={{ width: '30%' }}>
+                                <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">Title*</InputLabel>
+                                    <Select
+                                        labelId="demo-simple-select-label"
+                                        id="demo-simple-select"
+                                        value={age}
+                                        label="Title*"
+                                        onChange={handleChange}
+                                    >
+                                        <MenuItem value={10}>Ten</MenuItem>
+                                        <MenuItem value={20}>Twenty</MenuItem>
+                                        <MenuItem value={30}>Thirty</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Box>
+                            <Box sx={{ width: '30%' }}>
+                                <TextField id="outlined-basic" label="First name" variant="outlined" fullWidth/>
+                            </Box>
+                            <Box sx={{ width: '30%' }}>
+                                <TextField id="outlined-basic" label="Last name" variant="outlined" fullWidth/>
+                            </Box>
+                            <Box sx={{ width: '30%' }}>
+                                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                                    <DesktopDatePicker
+                                        label="Date desktop"
+                                        inputFormat="MM/DD/YYYY"
+                                        onChange={dateChange}
+                                        renderInput={(params) => <TextField {...params} />}
+                                        sx={{
+
+                                        }}
+                                    />
+                                </LocalizationProvider>
+                            </Box>
+                            <Box sx={{ width: '30%' }}>
+                                <TextField id="outlined-basic" label="Mobile number" variant="outlined" fullWidth/>
+                            </Box>
+                            <Box sx={{ width: '30%' }}>
+                                <TextField id="outlined-basic" label="Email" variant="outlined" fullWidth/>
+                            </Box>
+                        </div>
+                        <div className='receive-email-check'>
+                            <input type='checkbox' />
+                            <p>
+                                Yes, i want to receive emails from Flair and sms reminders on flight departures or changes
+                            </p>
+                        </div>
+                        <div className='access-request'>
+                            <Switch {...label} defaultChecked color="secondary" />
+                            <p> accessibility request </p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -7,6 +7,7 @@ import Inform from '../../components/Inform/Inform';
 import Header from '../../components/Header/Header';
 import ReverMap from '../../components/ReverMap/ReverMap';
 import PromoCode from '../../components/PromoCode/PromoCode';
+import PriceList from '../../components/PriceList/PriceList';
 import Footer from '../../components/Footer/Footer';
 
 // JSONS
@@ -28,10 +29,11 @@ const Reser3 = () => {
 
     const [priFlag, setPriFlag] = useState(0);
     const [bags, setBags] = useState(0);
+    const [priceListDispalyFlag, setPriceListDisplayFlag] = useState(false);
 
     const func_seeprice = (e) => {
         e.preventDefault();
-
+        setPriceListDisplayFlag(!priceListDispalyFlag);
     }
     return (
         <Wrapper>
@@ -46,39 +48,7 @@ const Reser3 = () => {
                         <div className='price'>
                             <p>$340.00 Total</p>
                             <Link to='#' onClick={func_seeprice}>see price breakdown</Link>
-                            <div className='show-price'>
-                                <p className='kind-of-money'>Prices in CAD</p>
-                                <div className='prices-list'>
-                                    <div className='price'>
-                                        <span>Fare</span>
-                                        <span>$19.08</span>
-                                    </div>
-                                    <div className='price'>
-                                        <span>Add-ons</span>
-                                        <span>$138.60</span>
-                                    </div>
-                                    <div className='price'>
-                                        <span>Taxes, fees and changes</span>
-                                        <span>$85.86</span>
-                                    </div>
-                                </div>
-                                <div className='total-price'>
-                                    <span>$243.54</span>
-                                </div>
-                                <div className='invoice-total'>
-                                    <div>
-                                        <p>Invoice total</p>
-                                        <span>This is the amount that will be charge to your card</span>
-                                    </div>
-                                    <div>
-                                       <p>$243.54</p> 
-                                       <span>non-unfundable</span>
-                                    </div>
-                                </div>
-                                <p className='label-promo-code'>
-                                    have a voucher, gift card or promo code?
-                                </p>
-                            </div>
+                            <PriceList props={{displayFlag: priceListDispalyFlag}}></PriceList>
                         </div>
                         <PromoCode></PromoCode>
                     </div>

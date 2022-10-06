@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const Wrapper = styled.div`
     .select-flight-div {
+        max-width: ${p => p.theme.maxWidth};
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: 20px 100px;
+        margin: 20px auto;
         gap: 20px;
         flex-wrap: wrap;
         margin-top: 100px;
@@ -56,10 +57,9 @@ export const Wrapper = styled.div`
     }
 
     .travelflex-div {
-
+        max-width: ${p => p.theme.maxWidth};
         border: 1px solid ${p => p.theme.borderColor1};
-
-        margin: 20px 80px;
+        margin: 20px auto;
         padding: 30px;
         border-radius: 30px;
 
@@ -218,7 +218,8 @@ export const Wrapper = styled.div`
         }
     }
     .anoun {
-        margin: 30px 100px;
+        max-width: ${p => p.theme.maxWidth};
+        margin: 30px auto;
         color: ${p => p.theme.borderColor1};
         .bold {
             font-family: 'avatar-bold';

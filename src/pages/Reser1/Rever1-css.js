@@ -54,85 +54,92 @@ export const Wrapper = styled.div`
     }
 
     .ticket-infos {
-        
-        display: flex;
-        justify-content: center;
-        .kind {
-            font-size: 20px;
-        }
-        .ticket-infos-div {
-            margin: 50px;
-            width: 80%;
-            .ticket-item {
-                border-radius: 30px;
-                border: 1px solid ${p => p.theme.borderColor1};
-                margin-bottom: 30px;
+        & > :nth-child(1) {
+            max-width: ${p => p.theme.maxWidth};
+            display: flex;
+            margin: auto;
+            justify-content: center;
+            .kind {
+                font-size: 20px;
+            }
+            .ticket-infos-div {
+                margin: 50px 20px;
+                width: 100%;
+                .ticket-item {
+                    border-radius: 30px;
+                    border: 1px solid ${p => p.theme.borderColor1};
+                    margin-bottom: 30px;
+                }
             }
         }
     }
 
     .passenger-information-div {
-        margin: 20px 100px;
-        @media screen and (max-width: 600px) {
-            margin: 20px 20px;
-        }
-        .label {
-            font-family: 'avatar-bold';
-        }
-        .passenger-information {
-            padding: 30px;
-            border: 1px solid ${p => p.theme.borderColor1};
-            margin-top: 30px;
-            border-radius: 30px;
-            .passenger-name {
+        & > div:nth-child(1) {
+            margin: 20px auto;
+            max-width: ${p => p.theme.maxWidth};
+            @media screen and (max-width: 600px) {
+                margin: 20px 20px;
+            }
+            .label {
                 font-family: 'avatar-bold';
-                font-size: 30px;
-                margin-bottom: 20px;
             }
-            .passenger-note {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                gap: 10px;
-                img {
-                    width: 20px;
+            .passenger-information {
+                padding: 30px;
+                border: 1px solid ${p => p.theme.borderColor1};
+                margin-top: 30px;
+                border-radius: 30px;
+                .passenger-name {
+                    font-family: 'avatar-bold';
+                    font-size: 30px;
+                    margin-bottom: 20px;
                 }
-            }
-            .forms {
-                display: flex;
-                justify-content: space-around;
-                gap: 20px;
-                margin-top: 50px;
-                align-items: center;
-                flex-wrap: wrap;
-                .MuiFormControl-root.MuiTextField-root {
-                    width: 100%;
-                }
-                @media screen and (max-width: 900px) {
-                    flex-direction: column;
-                    & > div {
-                        width: 90% !important;
+                .passenger-note {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 10px;
+                    img {
+                        width: 20px;
                     }
                 }
-            }
-            .receive-email-check {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                color: ${p => p.theme.borderColor1};
-                margin: 20px 10px;
-            }
-            .access-request {
-                display: flex;
-                justify-content: flex-start;
-                align-items: center;
-                color: ${p => p.theme.borderColor1};
+                .forms {
+                    display: flex;
+                    justify-content: space-around;
+                    gap: 20px;
+                    margin-top: 50px;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    .MuiFormControl-root.MuiTextField-root {
+                        width: 100%;
+                    }
+                    @media screen and (max-width: 900px) {
+                        flex-direction: column;
+                        & > div {
+                            width: 90% !important;
+                        }
+                    }
+                }
+                .receive-email-check {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    color: ${p => p.theme.borderColor1};
+                    margin: 20px 10px;
+                }
+                .access-request {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    color: ${p => p.theme.borderColor1};
+                }
             }
         }
     }
     .forget-something {
+        max-width: ${p => p.theme.maxWidth};
         border: 1px solid ${p => p.theme.borderColor1};
-        margin: 20px 100px;
+        margin: 20px auto;
         padding: 50px;
         border-radius: 30px;
         margin-top: 100px;
@@ -178,9 +185,10 @@ export const Wrapper = styled.div`
         }
     }
     .buttons {
+        max-width: ${p => p.theme.maxWidth};
         display: flex;
         justify-content: flex-end;
-        margin: 20px 100px;
+        margin: 20px auto;
         gap: 30px;
         & > button:nth-child(1) {
             color: ${p => p.theme.themeColor1};
