@@ -10,7 +10,7 @@ const TicketInfo1 = ({props}) => {
                     {props.kind}
                 </p>
                 <div className='from-to'>
-                    <div className='posi-div'>
+                    <div className='posi-   div'>
                         <p className='posi-p'>
                             {
                                 props.from.pos[0]
@@ -48,7 +48,7 @@ const TicketInfo1 = ({props}) => {
                 </div>
                 <div className='for-type'>
                     <p>
-                        Travel time: {props.travel_time.for}
+                        travel time: {props.travel_time.for}
                     </p>
                     <span>
                         {

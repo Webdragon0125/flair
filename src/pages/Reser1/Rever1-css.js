@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Wrapper = styled.div`
     .select-flight-div {
         & > div:nth-child(1) {
+            position: relative;
             max-width: ${p => p.theme.maxWidth};
             display: flex;
             justify-content: space-between;

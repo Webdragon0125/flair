@@ -86,6 +86,7 @@ export const Wrapper = styled.div`
         position: relative;
         display: block;
         padding: 20px 0;
+        font-family: 'avatar-bold';
       }
   
       .inner-wrapper {

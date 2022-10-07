@@ -15,6 +15,9 @@ const CustomBtn = styled.button`
   outline: 0;
   display: flex;
   cursor: pointer;
+  font-family: 'avatar-bold';
+  font-size: 16px;
+  white-space: nowrap;
   ${(p) => {
     return css`
       @media screen and (max-width: ${(p) => p.theme.media1}) {

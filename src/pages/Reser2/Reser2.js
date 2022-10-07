@@ -6,6 +6,7 @@ import Inform from '../../components/Inform/Inform';
 import Header from '../../components/Header/Header';
 import ReverMap from '../../components/ReverMap/ReverMap';
 import PromoCode from '../../components/PromoCode/PromoCode';
+import PriceList from '../../components/PriceList/PriceList';
 import Footer from '../../components/Footer/Footer';
 
 // JSONS
@@ -26,6 +27,13 @@ const Reser2 = () => {
     const [priFlag, setPriFlag] = useState(0);
     const [payFlag, setpayFlag] = useState(0);
 
+    const [priceListDispalyFlag, setPriceListDisplayFlag] = useState(false);
+
+    const func_seeprice = (e) => {
+        e.preventDefault();
+        setPriceListDisplayFlag(!priceListDispalyFlag);
+    }
+
     return (
         <Wrapper>
             <Inform></Inform>
@@ -39,6 +47,7 @@ const Reser2 = () => {
                         <div className='price'>
                             <p>$340.00 Total</p>
                             <Link to='#'>see price breakdown</Link>
+                            <PriceList props={{displayFlag: priceListDispalyFlag}}></PriceList>
                         </div>
                         <PromoCode></PromoCode>
                     </div>

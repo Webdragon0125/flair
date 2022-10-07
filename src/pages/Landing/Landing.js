@@ -266,13 +266,13 @@ const Landing = () => {
             </div>
           <div className="search-button-contain-div">
             <div>
-              <button>
-                {'search'}
-                <img src={IMG_RIGHT} alt='' />
-              </button>
+              <div class="wrap">
+                <button class="button">{'search'}
+                <img src={IMG_RIGHT} alt='' /></button>
+              </div>
               <div className="choose-what">
                 <div className="choose-what-title">
-                  Trending searches
+                  trending searches
                 </div>
                 <div className="choose-wait-childs">
                   <div>
@@ -286,7 +286,7 @@ const Landing = () => {
             </div>
           </div>
         <div className="sun-of-beach" id='explore-more-deals'>
-          <p className="title">Explore more deals</p>
+          <p className="title"></p>
           <Link to='/book'><img src={IMG_BACK1} alt=''></img></Link>
         </div>
       </div>
@@ -346,7 +346,7 @@ const Landing = () => {
             We are growing fast. With several exciting routes Flair files to
             popular destinations
           </p>
-          <button> ee map </button>
+          <button> see map </button>
         </div>
       </WhereWeFly>
 

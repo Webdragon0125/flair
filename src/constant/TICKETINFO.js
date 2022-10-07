@@ -15,7 +15,7 @@ export const TICKETINFO = [
         },
         price: 49.00,
         isOpen: true,
-        kind: 'Depart',
+        kind: 'depart',
     },
     {
         from: {
@@ -33,6 +33,6 @@ export const TICKETINFO = [
         },
         price: 49.00,
         isOpen: false,
-        kind: 'Return',
+        kind: 'return',
     }
 ]

@@ -15,14 +15,16 @@ import PlanTickets from "../../components/PlanTickets/PlanTickets";
 import PromoCode from "../../components/PromoCode/PromoCode";
 import TicketInfo from "../../components/TicketInfo/TicketInfo";
 import Bundle from "../../components/Bundle/Bundle";
+import ChooseBundle from '../../components/ChooseBundle/ChooseBundle';
 import Footer from "../../components/Footer/Footer";
 
 import { Wrapper } from "./Book-css";
 
 const Book = () => {
 
-  const [bundleFlag, setBundleFlag] = useState(null);
+  const [bundleDisplayFlag, setBundleDisplayFlag] = useState(-1);
 
+  const [bundleFlag, setBundleFlag] = useState(null);
   useEffect(() => {
     BUNDLE.map((item, index) => {
       if (item.recommend) {
@@ -56,24 +58,7 @@ const Book = () => {
                           <TicketInfo props={{...item, isOpen: item.isOpen}} key={index}></TicketInfo>
                           {
                             item.isOpen ? (
-                              <React.Fragment>
-                                <div className='bundles'>
-                                  <h1>Choose a bundle</h1>
-                                  <div className='bundle-items'>
-                                    {
-                                      BUNDLE.map((item, index) => (
-                                        <Bundle 
-                                          props={{...item, checked: index === bundleFlag ? true : false, setBundle:setBundleFlag, bundle: index}}
-                                          key={index}
-                                        ></Bundle>
-                                      ))
-                                    }
-                                  </div>
-                                </div>
-                                <div className='continue'>
-                                  <Link to='/reser1'>Continue</Link>
-                                </div>
-                              </React.Fragment>
+                              <ChooseBundle props={{displayFlag: true}}></ChooseBundle>
                             ) : null
                           }
                         </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import Box from '@mui/material/Box';
@@ -22,6 +22,7 @@ import Header from '../../components/Header/Header';
 import ReverMap from '../../components/ReverMap/ReverMap';
 import PromoCode from '../../components/PromoCode/PromoCode';
 import TicketInfo1 from '../../components/TicketInfo1/TicketInfo1';
+import PriceList from '../../components/PriceList/PriceList';
 import Footer from '../../components/Footer/Footer';
 
 // Styled components
@@ -51,6 +52,13 @@ const Reser1 = () => {
         setValue(newValue);
     };
 
+    const [priceListDispalyFlag, setPriceListDisplayFlag] = useState(false);
+
+    const func_seeprice = (e) => {
+        e.preventDefault();
+        setPriceListDisplayFlag(!priceListDispalyFlag);
+    }
+
     return (
         <Wrapper>
             <Inform></Inform>
@@ -63,7 +71,8 @@ const Reser1 = () => {
                         <Link to='#' className='to-email'>Enter your email address or phone number to save flight {'>'}</Link>
                         <div className='price'>
                             <p>$340.00 Total</p>
-                            <Link to='#'>see price breakdown</Link>
+                            <Link to='#' onClick={func_seeprice}>see price breakdown</Link>
+                            <PriceList props={{displayFlag: priceListDispalyFlag}}></PriceList>
                         </div>
                         <PromoCode></PromoCode>
                     </div>
@@ -148,7 +157,7 @@ const Reser1 = () => {
                 </div>
             </div>
             <div className='forget-something'>
-                <h1>Did you forget something ?</h1>
+                <h1>did you forget something ?</h1>
                 <div className='somethings'>
                     <div className='something'>
                         <div>
@@ -165,7 +174,7 @@ const Reser1 = () => {
                 </div>
             </div>
             <div className='buttons'>
-                <button> Change flight </button>
+                <button> change flight </button>
                 <button> continue </button>
             </div>
             <Footer></Footer>

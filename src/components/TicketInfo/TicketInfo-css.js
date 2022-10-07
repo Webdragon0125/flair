@@ -12,7 +12,6 @@ export const Wrapper = styled.div`
     padding: 30px 20px;
     margin: auto;
     color: ${p => p.theme.fontColor};
-    border-bottom: ${p => p.isOpen ? '1px' : '0px'} solid ${p => p.theme.borderColor1};
     @media screen and (max-width: 900px) {
         flex-direction: column;
         gap: 30px;
@@ -78,13 +77,25 @@ export const Wrapper = styled.div`
         }
     }
     .show-price {
+        cursor: pointer;
         text-align: center;
+        &:hover {
+            & > p:nth-child(2) {
+                transition: all .2s;
+                transform: scale(1.2);
+            }
+        }
         & > p:nth-child(2) {
             color: ${p => p.theme.themeColor1};
             font-family: 'avatar-bold';
+            font-size: 25px;
         }
         & > p:nth-child(3) {
             color: ${p => p.theme.borderColor1};
+        }
+        padding: 0 30px;
+        @media screen and (min-width: 900px) {
+            border-left: 2px dotted ${p => p.theme.borderColor1};
         }
     }
 `

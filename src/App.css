@@ -18,10 +18,10 @@ input {
 
 @font-face {
   font-family: 'avatar-regular';
-  src: url('./assets/Fonts/AvertaDemoPECuttedDemo-Regular.otf');
+  src: url('./assets/Fonts/AvertaDemoPE-Regular.otf');
 }
 
 @font-face {
   font-family: 'avatar-bold';
-  src: url('./assets/Fonts/AvertaDemoPE-ExtraBold.otf');
+  src: url('./assets/Fonts/averta-black.otf');
 }

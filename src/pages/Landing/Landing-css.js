@@ -192,7 +192,96 @@ export const Wrapper = styled.div`
           margin: 0px auto;
           padding: 0px 0;
         }
-        button {
+        .wrap {
+          @media screen and (max-width: 500px) {
+              margin: auto
+            }
+        }
+
+        .button {
+            position: relative;
+            img {
+              position: absolute;
+              height: 30px;
+              right: 20px;
+              top: calc(50% - 15px);
+            }
+            
+            min-width: 300px;
+            min-height: 60px;
+            font-family: 'avatar-bold';
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1.3px;
+            font-weight: 700;
+            color: white;
+            background: #4FD1C5;
+            background: ${p => p.theme.themeColor1};
+            border: none;
+            border-radius: 1000px;
+            box-shadow: 12px 12px 24px rgba(140,10,200, .64);
+            transition: all 0.3s ease-in-out 0s;
+            cursor: pointer;
+            outline: none;
+            position: relative;
+            padding: 10px;
+            
+          }
+
+        button::before {
+        content: '';
+          border-radius: 1000px;
+          min-width: calc(300px + 12px);
+          min-height: calc(60px + 12px);
+          border: 6px solid ${p => p.theme.themeColor1};
+          box-shadow: 0 0 60px rgba(140,10,200,.64);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          opacity: 0;
+          transition: all .3s ease-in-out 0s;
+        }
+
+        .button:hover, .button:focus {
+          transform: translateY(-6px);
+        }
+
+        button:hover::before, button:focus::before {
+          opacity: 1;
+        }
+
+        button::after {
+          content: '';
+          width: 30px; height: 30px;
+          border-radius: 100%;
+          border: 6px solid ${p => p.theme.themeColor1};
+          position: absolute;
+          z-index: -1;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          animation: ring 1.5s infinite;
+        }
+
+        button:hover::after, button:focus::after {
+          animation: none;
+          display: none;
+        }
+
+        @keyframes ring {
+          0% {
+            width: 30px;
+            height: 30px;
+            opacity: 1;
+          }
+          100% {
+            width: 300px;
+            height: 300px;
+            opacity: 0;
+          }
+        }
+        /* button {
           display: inline-block;
           padding: .75rem 1.25rem;
           border-radius: 10rem;
@@ -200,14 +289,10 @@ export const Wrapper = styled.div`
           font-size: 1rem;
           letter-spacing: .15rem;
           transition: all .3s;
-          position: relative;
           overflow: hidden;
           z-index: 1;
           border: 0;
           outline: 0;
-          @media screen and (max-width: 500px) {
-            margin: auto
-          }
           &:after {
             content: '';
             position: absolute;
@@ -243,14 +328,8 @@ export const Wrapper = styled.div`
           font-size: 20px;
           padding: 10px 100px;
           border-radius: 50px;
-          position: relative;
-          img {
-            position: absolute;
-            height: 30px;
-            right: 20px;
-            top: calc(50% - 15px);
-          }
-        }
+          
+        } */
         
         .choose-what {
           @media screen and (max-width: 1180px) {
@@ -277,6 +356,7 @@ export const Wrapper = styled.div`
             gap: 20px;
             flex-wrap: wrap;
             div {
+              font-family: 'avatar-regular';
               background-color: ${p => p.theme.themeColor};
               padding: 5px 10px;
             }
