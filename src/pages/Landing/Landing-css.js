@@ -197,7 +197,6 @@ export const Wrapper = styled.div`
           padding: .75rem 1.25rem;
           border-radius: 10rem;
           color: #fff;
-          text-transform: uppercase;
           font-size: 1rem;
           letter-spacing: .15rem;
           transition: all .3s;

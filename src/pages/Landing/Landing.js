@@ -172,7 +172,7 @@ const Landing = () => {
                         fontSize: '20px',
                       }
                     },
-                    '& .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
+                    '& .MuiInputLabel-root': {
                       fontSize: '30px',
                       fontFamily: 'avatar-bold',
                       color: 'black',
@@ -198,7 +198,7 @@ const Landing = () => {
                         fontSize: '20px',
                       }
                     },
-                    '& .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root': {
+                    '& .MuiInputLabel-root': {
                       fontSize: '30px',
                       fontFamily: 'avatar-bold',
                       color: 'black',
@@ -226,7 +226,7 @@ const Landing = () => {
                       sx={{
                         backgroundColor: 'white',
                         width: '300px',
-                        '& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
+                        '& .MuiInputBase-inputAdornedEnd': {
                           fontSize: '30px',
                           fontFamily: 'avatar-bold',
                           '@media screen and (max-width: 500px)': {
@@ -250,7 +250,7 @@ const Landing = () => {
                       renderInput={(params) => <TextField {...params} sx={{
                         backgroundColor: 'white',
                         width: '300px',
-                        '& .css-nxo287-MuiInputBase-input-MuiOutlinedInput-input': {
+                        '& .MuiInputBase-inputAdornedEnd': {
                           fontSize: '30px',
                           fontFamily: 'avatar-bold',
                           '@media screen and (max-width: 500px)': {
@@ -267,7 +267,7 @@ const Landing = () => {
           <div className="search-button-contain-div">
             <div>
               <button>
-                search 
+                {'search'}
                 <img src={IMG_RIGHT} alt='' />
               </button>
               <div className="choose-what">
@@ -340,12 +340,13 @@ const Landing = () => {
       </div>
       <WhereWeFly img={IMG_MAP}>
         <div className="content" id='where-we-fly'>
-          <h1>Where we fly</h1>
+          <h1>
+            where we fly</h1>
           <p>
             We are growing fast. With several exciting routes Flair files to
             popular destinations
           </p>
-          <button> See map </button>
+          <button> ee map </button>
         </div>
       </WhereWeFly>
 
