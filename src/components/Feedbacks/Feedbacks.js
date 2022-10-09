@@ -21,9 +21,9 @@ export default function Feedback({ props }) {
       <Swiper
         slidesPerView={3}
         spaceBetween={40}
-        pagination={{
-          clickable: true,
-        }}
+        // pagination={{
+        //   clickable: true,
+        // }}
         grabCursor={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"

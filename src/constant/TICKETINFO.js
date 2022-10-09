@@ -2,11 +2,13 @@ export const TICKETINFO = [
     {
         from: {
             pos: ['Edmonton', 'YEG'],
-            date: 'Sept 26(Mon) - 18:30 PM'
+            date: 'Sept 26(Mon) - 18:30 PM',
+            time: '18:30 PM'
         },
         to: {
             pos: ['Vancouver', 'YVR'],
-            date: 'Sept 26(Mon) - 18:55 PM'
+            date: 'sept 26(Mon) - 18:55 PM',
+            time: '18:55 PM'
         },
         type: 'nonstop',
         travel_time: {
@@ -20,11 +22,13 @@ export const TICKETINFO = [
     {
         from: {
             pos: ['Edmonton', 'YEG'],
-            date: 'Sept 26(Mon) - 18:30 PM'
+            date: 'sept 26(Mon) - 18:30 PM',
+            time: '18:30 PM'
         },
         to: {
             pos: ['Vancouver', 'YVR'],
-            date: 'Sept 26(Mon) - 18:55 PM'
+            date: 'sept 26(Mon) - 18:55 PM',
+            time: '18:55 PM'
         },
         type: 'nonstop',
         travel_time: {
@@ -32,7 +36,7 @@ export const TICKETINFO = [
             plane: 'F81798'
         },
         price: 49.00,
-        isOpen: false,
+        isOpen: true,
         kind: 'return',
     }
 ]

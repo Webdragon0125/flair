@@ -71,7 +71,7 @@ const SeatSelect = () => {
             </div>
             <div className='personalise-div'>
                 <div>
-                    <div className='tickets' style={{marginLeft: '30px'}}>
+                    <div className='tickets'>
                         <div>
                             <Tickets props={{flag: 0}}>
                                 <p>Depart <span>YEG {'->'} YLW</span></p>

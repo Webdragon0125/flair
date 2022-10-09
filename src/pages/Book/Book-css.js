@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
+    position: relative;
     .tickets {
         /* display: flex;
         flex-direction: column;
@@ -18,10 +19,12 @@ export const Wrapper = styled.div`
                 flex-direction: column;
                 gap: 30px;
                 text-align: center;
-                @media screen and (max-width: 500px) {
-                    font-size: 15px;
-                    margin: 20px 40px;
-                }
+            }
+            @media screen and (max-width: 500px) {
+                font-size: 15px;
+                margin: 0px 10px;
+                gap: 10px;
+                margin-bottom: 20px;
             }
         }
     }
@@ -37,6 +40,13 @@ export const Wrapper = styled.div`
                 .ticket-item {
                     border-radius: 30px;
                     border: 1px solid ${p => p.theme.borderColor1};
+                    @media screen and (max-width: 500px) {
+                        border-radius: 0px;
+                        border: 0;
+                        margin: 5px;
+                        box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, .1);
+                        margin-bottom: 10px;
+                    }
                     margin-bottom: 30px;
                     padding-bottom: 30px;
                 }

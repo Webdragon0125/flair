@@ -14,7 +14,7 @@ export const Wrapper = styled.div`
             .label-flight-div {
                 font-family: 'avatar-bold';
                 font-size: 25px;
-                @media screen and (max-width: 978px) {
+            @media screen and (max-width: 978px) {
                     width: 100%;
                     text-align: center;
                 }
@@ -69,6 +69,13 @@ export const Wrapper = styled.div`
                     border-radius: 30px;
                     border: 1px solid ${p => p.theme.borderColor1};
                     margin-bottom: 30px;
+                    @media screen and (max-width: 500px) {
+                        border-radius: 0px;
+                        margin-bottom: 10px;
+                    }
+                }
+                @media screen and (max-width: 500px) {
+                    margin: 20px 10px;
                 }
             }
         }
@@ -86,6 +93,11 @@ export const Wrapper = styled.div`
             border: 1px solid ${p =>p.theme.borderColor1};
             border-radius: 30px;
             padding: 30px;
+            @media screen and (max-width: 500px) {
+                border-radius: 0px;
+                width: 95%;
+                margin: auto;
+            }
             .personalisation-tab {
                 display: flex;
                 gap: 20px;
@@ -96,6 +108,14 @@ export const Wrapper = styled.div`
                     }
                     padding: 10px 20px;
                     border-bottom: 2px solid ${p => p.theme.themeColor1};
+                    @media screen and (max-width: 500px) {
+                        p {
+                            font-size: 20px;
+                            font-family: 'avatar-bold';
+                        }
+                        padding: 0;
+                        border-bottom: 2px solid ${p => p.theme.themeColor1};
+                    }
                 }
             }
             .personalisation-info {
@@ -106,9 +126,13 @@ export const Wrapper = styled.div`
                 flex-wrap: wrap;
                 gap: 20px;
 
-                @media screen and (max-width: 550px) {
+                @media screen and (max-width: 500px) {
                     display: grid;
                     grid-template-columns: auto auto;
+                    text-align: center;
+                    div {
+                        border-bottom: 1px solid ${p => p.theme.themeColor1};
+                    }
                 }
              }
             .bags-road {
@@ -118,13 +142,25 @@ export const Wrapper = styled.div`
                 img {
                     width: 20px;
                 }
+                @media screen and (max-width: 500px) {
+                    gap: 20px;
+                }
                 .bags-road-index {
-                    margin-top: 50px;
+                    margin-top: 100px;
+                    @media screen and (max-width: 500px) {
+                        margin-top: 0px;
+                        width: 100%;
+                        box-shadow: 0 3px 0 rgba(0, 0, 0, .4);
+                        padding: 10px;
+                    }
                     .bags-road-index-head {
                         height: 100px;
                         display: flex;
                         flex-direction: column;
                         justify-content: center;
+                        @media screen and (max-width: 500px) {
+                            height: 50px;
+                        }
                         & > p:nth-child(1) {
                             font-family: 'avatar-bold';
                             font-size: 20px;
@@ -305,12 +341,12 @@ export const Wrapper = styled.div`
                     }
                 }
 
-                button {
+                .submit {
                     outline: 0;
                     border: 0;
                     font-family: 'avatar-bold';
-                    font-size: 30px;
-                    padding: 20px 30px;
+                    font-size: 20px;
+                    padding: 10px 20px;
                     background-color: ${p => p.theme.themeColor1};
                     border-radius: 50px;
                     color: white;

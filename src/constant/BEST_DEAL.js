@@ -11,28 +11,28 @@ export const BEST_DEAL = [
         img: IMG_TORONTO_KELOWNA,
         name: 'Kelowna',
         date: 'Sep 26 2002',
-        ticket: 'One way',
+        ticket: 'one way',
         price: '13'
     },
     {
         img: IMG_TORONTO_CALGORY,
         name: 'Calgary',
         date: 'Sep 20 2002',
-        ticket: 'One way',
+        ticket: 'one way',
         price: '19'
     },
     {
         img: IMG_TORONTO_EDMONTON,
         name: 'Edmonton',
         date: 'Sep 20 2002',
-        ticket: 'One way',
+        ticket: 'one way',
         price: '19'
     },
     {
         img: IMG_TORONTO_CANCUN,
         name: 'Cancun',
         date: 'Sep 26 2002',
-        ticket: 'One way',
+        ticket: 'one way',
         price: '13'
     },
     {

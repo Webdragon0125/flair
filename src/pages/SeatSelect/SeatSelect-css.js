@@ -122,10 +122,12 @@ export const Wrapper = styled.div`
             margin: auto;
             max-width: ${p => p.theme.maxWidth};
             @media screen and (max-width: 550px) {
-                margin: 0 20px;
+                margin: 0 10px;
+                padding: 10px;
             }
-            border: 1px solid ${p => p.theme.borderColor1};
             padding: 30px;
+            border: 1px solid ${p => p.theme.borderColor1};
+            
             border-radius: 20px;
             .tickets {
                 display: flex;
@@ -133,10 +135,18 @@ export const Wrapper = styled.div`
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
+                margin-left: 30px;
+                @media screen and (max-width: 500px) {
+                    margin-left: 10px;
+                }
                 & > div:nth-child(1) {
                     display: flex;
                     gap: 20px;
+                    @media screen and (max-width: 500px) {
+                        gap: 0px;
+                    }
                 }
+                
                 button {
                     border: 0;
                     outline: 0;
@@ -158,13 +168,22 @@ export const Wrapper = styled.div`
                     gap: 10px;
                     align-items: center;
                     font-size: 20px;
+                    @media screen and (max-width: 500px) {
+                        font-size: 15px;
+                    }
                 }
+
             }
 
             .quick-select {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
+                @media screen and (max-width: 500px) {
+                    p {
+                        text-align: center;
+                    }
+                }
                 button {
                     border: 0;
                     outline: 0;
@@ -174,6 +193,12 @@ export const Wrapper = styled.div`
                     font-size: 25px;
                     padding: 10px 50px;
                     border-radius: 50px;
+                    @media screen and (max-width: 500px) {
+                        font-size: 15px;
+                        font-family: 'avatar-regular';
+                        padding: 10px 30px;
+                        border-radius: 10px;
+                    }
                 }
             }
             .seats-descs {
@@ -191,6 +216,9 @@ export const Wrapper = styled.div`
                     display: flex;
                     justify-content: space-between;
                     width: 1000px;
+                    @media screen and (max-width: 500px) {
+                        width: 100%;
+                    }
                     margin: auto;
                     .abc-block {
                         width: 400px;
@@ -371,6 +399,9 @@ export const Wrapper = styled.div`
             display: flex;
             justify-content: flex-end;
             gap: 30px;
+            @media screen and (max-width: 500px) {
+                justify-content: center;
+            }
             a {
                 padding: 20px 30px;
                 border-radius: 50px;
@@ -378,6 +409,10 @@ export const Wrapper = styled.div`
                 font-size: 25px;
                 font-family: 'avatar-bold';
                 text-decoration: none;
+                @media screen and (max-width: 500px) {
+                    font-size: 15px;
+                    font-family: 'avatar-regular';
+                }
             }
             .info {
                 border: 1px solid ${p => p.theme.themeColor1};
@@ -400,6 +435,9 @@ export const Wrapper = styled.div`
                 font-family: 'avatar-bold';
                 font-size: 30px;
                 margin: 30px 0;
+                @media screen and (max-width: 500px) {
+                    font-size: 20px;
+                }
             }
             .thin {
                 a {

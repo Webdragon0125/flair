@@ -211,7 +211,6 @@ export const Wrapper = styled.div`
             min-height: 60px;
             font-family: 'avatar-bold';
             font-size: 20px;
-            text-transform: uppercase;
             letter-spacing: 1.3px;
             font-weight: 700;
             color: white;
@@ -220,7 +219,7 @@ export const Wrapper = styled.div`
             border: none;
             border-radius: 1000px;
             box-shadow: 12px 12px 24px rgba(140,10,200, .64);
-            transition: all 0.3s ease-in-out 0s;
+            transition: all 0.3s ea-in-out 0s;
             cursor: pointer;
             outline: none;
             position: relative;

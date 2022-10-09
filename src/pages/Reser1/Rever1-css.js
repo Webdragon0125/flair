@@ -70,6 +70,13 @@ export const Wrapper = styled.div`
                     border-radius: 30px;
                     border: 1px solid ${p => p.theme.borderColor1};
                     margin-bottom: 30px;
+                    @media screen and (max-width: 500px) {
+                        border-radius: 0px;
+                        margin-bottom: 10px;
+                    }
+                }
+                @media screen and (max-width: 500px) {
+                    margin: 10px 5px;   
                 }
             }
         }

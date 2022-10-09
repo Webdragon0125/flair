@@ -10,7 +10,8 @@ export const BUNDLE = [
                 item_name: 'personal item',
                 explain: 'up to 7kg'
             }
-        ]
+        ],
+        color: '#FAB065'
     },
     {
         name: 'basic bundle',
@@ -33,10 +34,11 @@ export const BUNDLE = [
                 item_name: '1st checked baggage',
                 explain: 'up to 23kg'
             }
-        ]
+        ],
+        color: '#0F40C7'
     },
     {
-        name: 'bare bundle',
+        name: 'big bundle',
         recommend: false,
         fee: {
             flag: 1,
@@ -48,22 +50,23 @@ export const BUNDLE = [
                 item_name: 'personal item',
                 explain: 'up to 7kg'
             },
-            {
-                item_name: 'carry-on bag',
-                explain: 'up to 10kg'
-            },
-            {
-                item_name: '1st checked baggage',
-                explain: 'up to 23kg'
-            },
-            {
-                item_name: 'priority boarding',
-                explain: 'board and get settled early'
-            },
-            {
-                item_name: 'modify or cancel flight',
-                explain: 'change or cancellation fees waived'
-            }
-        ]
+            // {
+            //     item_name: 'carry-on bag',
+            //     explain: 'up to 10kg'
+            // },
+            // {
+            //     item_name: '1st checked baggage',
+            //     explain: 'up to 23kg'
+            // },
+            // {
+            //     item_name: 'priority boarding',
+            //     explain: 'board and get settled early'
+            // },
+            // {
+            //     item_name: 'modify or cancel flight',
+            //     explain: 'change or cancellation fees waived'
+            // }
+        ],
+        color: '#30FF00'
     }
 ]

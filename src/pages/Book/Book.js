@@ -54,11 +54,11 @@ const Book = () => {
                   <div className='ticket-infos-div'>
                     {
                       TICKETINFO.map((item, index) => (
-                        <div className='ticket-item' style={{border: item.isOpen ? '' : 0}}>
-                          <TicketInfo props={{...item, isOpen: item.isOpen}} key={index}></TicketInfo>
+                        <div className='ticket-item' style={{border: item.isOpen ? '' : 0, paddingBottom: item !== bundleDisplayFlag ? '0' : '30px'}}>
+                          <TicketInfo props={{...item, isOpen: item.isOpen, bundleFlag: item, setFlag: setBundleDisplayFlag}} key={index} ></TicketInfo>
                           {
                             item.isOpen ? (
-                              <ChooseBundle props={{displayFlag: true}}></ChooseBundle>
+                              <ChooseBundle props={{displayFlag: item === bundleDisplayFlag}}></ChooseBundle>
                             ) : null
                           }
                         </div>

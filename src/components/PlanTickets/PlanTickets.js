@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styled from 'styled-components';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation } from "swiper";
+import { Pagination, Navigation, Scrollbar, A11y } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -19,6 +19,12 @@ const PlanTickets = () => {
 
     const [mySwiper, setMySwiper] = useState(null);
 
+    const [swiperIndex, setSwiperIndex] = useState(0);
+
+    useEffect(() => {
+        // mySwiper.slideTo(swiperIndex, 0);
+    })
+
     const func_nextSlide = () => {
         mySwiper.slideNext();
     }
@@ -34,21 +40,15 @@ const PlanTickets = () => {
                 <div className='myswiper-div'>
                     <Swiper
                         onSwiper={s=>{
+                            s.slideTo(swiperIndex, 0);
                             setMySwiper(s);
                         }}
                         grabCursor={true}
+                        modules={[Navigation, Pagination, Scrollbar, A11y]}
                         className="mySwiper"
                         breakpoints={{
-                            400: {
-                                slidesPerView: 1,
-                                spaceBetween: 10,
-                            },
-                            600: {
-                                slidesPerView: 2,
-                                spaceBetween: 10,
-                            },
-                            800: {
-                                slidesPerView: 4,
+                            0: {
+                                slidesPerView: 3,
                                 spaceBetween: 10,
                             },
                             1000: {
@@ -67,10 +67,11 @@ const PlanTickets = () => {
                     >
                         {
                             PLANTICKETS.map((item, index) => (
-                                <CustomSwiperSlide key={index}>
+                                <CustomSwiperSlide key={index} selected={index === swiperIndex} onClick={() => {
+                                    setSwiperIndex(index);
+                                }}>
                                     <p>{item.date}</p>
                                     <p>${item.price}</p>
-                                    <p>${item.more + ' more'}</p>
                                 </CustomSwiperSlide>
                             ))
                         }
@@ -119,8 +120,8 @@ const CustomSwiperSlide = styled(SwiperSlide)`
     display: flex;
     flex-direction: column;
     border: 1px solid ${p => p.theme.borderColor1};
-    padding: 20px;
     border-radius: 20px;
+    
     & > p:nth-child(1) {
         font-weight: 100 !important;
         font-size: 20px;
@@ -132,10 +133,33 @@ const CustomSwiperSlide = styled(SwiperSlide)`
         font-size: 25px;
         margin: 20px 0 30px 0;
     }
-    & > p:nth-child(3) {
+
+    border-bottom: ${p => p.selected ? '2px solid' : '0'} ${p => p.theme.themeColor1};
+    @media screen and (max-width: 500px) {
+        border-radius: 0px;
+        padding: 0px;
+        height: min-content !important;
+        border: 0;
+        border-bottom: ${p => p.selected ? '2px solid' : '0'} ${p => p.theme.themeColor1};
+        
+        transform: ${p => p.selected ? 'scale(1.2)' : 0};
+        & > p:nth-child(1) {
+            font-weight: 100 !important;
+            font-size: 12px;
+            margin: 5px;
+        }
+        & > p:nth-child(2) {
+            color: ${p => p.theme.themeColor1};
+            font-family: 'avatar-bold';
+            font-size: 20px;
+            margin: 0;
+            margin-bottom: 5px;
+        }
+    }
+    /* & > p:nth-child(3) {
         font-size: 18px;
         margin-bottom: 30px;
-    }
+    } */
 `
 
 export default PlanTickets;

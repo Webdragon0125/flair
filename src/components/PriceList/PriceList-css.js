@@ -7,11 +7,13 @@ export const Wrapper = styled.div`
     border: 1px solid ${p => p.theme.borderColor1};
     border-radius: 30px;
     width: 400px;
+    background-color: white;
     @media screen and (max-width: 400px){
-        width: 100%;
+        width: 99%;
     }
     right: 0;
     background-color: white;
+    z-index: 104;
     .kind-of-money {
         color: black;
         font-family: 'avatar-bold';

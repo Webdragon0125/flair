@@ -12,6 +12,10 @@ div,  span {
   font-family: 'avatar-regular';
 }
 
+button {
+  font-family: 'avatar-regular';
+}
+
 input {
   box-sizing: border-box;
 }

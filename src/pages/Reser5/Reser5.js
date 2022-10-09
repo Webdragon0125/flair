@@ -18,6 +18,7 @@ import Header from '../../components/Header/Header';
 import ReverMap from "../../components/ReverMap/ReverMap";
 import PromoCode from '../../components/PromoCode/PromoCode';
 import Footer from "../../components/Footer/Footer";
+import PriceList from "../../components/PriceList/PriceList";
 
 // Styled components
 import { Wrapper } from "./Reser5-css";
@@ -44,6 +45,13 @@ const Reser5 = () => {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+
+    const [priceListDispalyFlag, setPriceListDisplayFlag] = useState(false);
+
+    const func_seeprice = (e) => {
+        e.preventDefault();
+        setPriceListDisplayFlag(!priceListDispalyFlag);
+    }
     return (
         <Wrapper>
             <Inform></Inform>
@@ -56,7 +64,8 @@ const Reser5 = () => {
                         <Link to='#' className='to-email'>customeremail@gmail.com 780-555-1212</Link>
                         <div className='price'>
                             <p>$340.00 Total</p>
-                            <Link to='#'>see price breakdown</Link>
+                            <Link to='#' onClick={func_seeprice}>see price breakdown</Link>
+                            <PriceList props={{displayFlag: priceListDispalyFlag}}></PriceList>
                         </div>
                         <PromoCode></PromoCode>
                     </div>
@@ -67,7 +76,7 @@ const Reser5 = () => {
                     <div className='ticket-infos-div'>
                         {
                             TICKETINFO.map((item, index) => (
-                                <div className='ticket-item' style={{border: ''}}>
+                                <div className='ticket-item'>
                                     <TicketInfo1 props={{...item, isOpen: false}} key={index}></TicketInfo1>
                                 </div>
                             ))
@@ -269,15 +278,15 @@ const Reser5 = () => {
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <Stack spacing={3}>
                                 <DatePicker
-                                views={['year', 'month']}
-                                label="Year and Month"
-                                minDate={dayjs('2012-03-01')}
-                                maxDate={dayjs('2023-06-01')}
-                                value={value}
-                                onChange={(newValue) => {
-                                    setValue(newValue);
-                                }}
-                                renderInput={(params) => <TextField {...params} helperText={null} />}
+                                    views={['year', 'month']}
+                                    label="Year and Month"
+                                    minDate={dayjs('2012-03-01')}
+                                    maxDate={dayjs('2023-06-01')}
+                                    value={value}
+                                    onChange={(newValue) => {
+                                        setValue(newValue);
+                                    }}
+                                    renderInput={(params) => <TextField {...params} helperText={null} />}
                                 />
                             </Stack>
                         </LocalizationProvider>
@@ -350,7 +359,7 @@ const Reser5 = () => {
                                 </p>
                             </div>
                         </div>
-                        <button>
+                        <button className="submit">
                             submit
                         </button>
                     </div>

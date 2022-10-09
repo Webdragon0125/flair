@@ -83,7 +83,7 @@ const Reser1 = () => {
                     <div className='ticket-infos-div'>
                         {
                             TICKETINFO.map((item, index) => (
-                                <div className='ticket-item' style={{border: ''}}>
+                                <div className='ticket-item'>
                                     <TicketInfo1 props={{...item, isOpen: false}} key={index}></TicketInfo1>
                                 </div>
                             ))

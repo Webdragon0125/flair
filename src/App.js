@@ -17,6 +17,7 @@ const App = () => {
     media1: "800px",
     borderColor1: "#A8A8A8",
     mapColor: "#F7FFF5",
+    colors: ['#FAB065', '#0F40C7', '#30FF00']
   };
 
   const [informFlag, setInformFlag] = useState(true);

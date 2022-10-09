@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
     @media screen and (max-width: 550px) {
         width: 100%;
         height: 200px;
+        height: min-content;
     }
     & > div:nth-child(1) {
         display: flex;
