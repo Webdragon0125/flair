@@ -1,3 +1,7 @@
+import IMG_BAG from '../assets/personal-items/bag.png';
+import IMG_PERSONALITEM from '../assets/personal-items/personalItem.png';
+
+
 export const BUNDLE = [
     {
         name: 'bare bundle',
@@ -8,7 +12,8 @@ export const BUNDLE = [
         items: [
             {
                 item_name: 'personal item',
-                explain: 'up to 7kg'
+                explain: 'up to 7kg',
+                img: IMG_BAG
             }
         ],
         color: '#FAB065'
@@ -24,15 +29,18 @@ export const BUNDLE = [
         items: [
             {
                 item_name: 'personal item',
-                explain: 'up to 7kg'
+                explain: 'up to 7kg',
+                img: IMG_BAG
             },
             {
                 item_name: 'carry-on bag',
-                explain: 'up to 10kg'
+                explain: 'up to 10kg',
+                img: IMG_BAG
             },
             {
                 item_name: '1st checked baggage',
-                explain: 'up to 23kg'
+                explain: 'up to 23kg',
+                img: IMG_BAG
             }
         ],
         color: '#0F40C7'
@@ -48,15 +56,18 @@ export const BUNDLE = [
         items: [
             {
                 item_name: 'personal item',
-                explain: 'up to 7kg'
+                explain: 'up to 7kg',
+                img: IMG_BAG
             },
             {
                 item_name: 'carry-on bag',
-                explain: 'up to 10kg'
+                explain: 'up to 10kg',
+                img: IMG_PERSONALITEM
             },
             {
                 item_name: '1st checked baggage',
-                explain: 'up to 23kg'
+                explain: 'up to 23kg',
+                img: IMG_PERSONALITEM
             },
             // {
             //     item_name: 'priority boarding',

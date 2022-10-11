@@ -28,9 +28,9 @@ const ChooseBundle = ({props}) => {
                 <div className='bundle-items'>
                 {
                     BUNDLE.map((item, index) => (
-                    <Bundle 
-                        props={{...item, checked: index === bundleFlag ? true : false, setBundle:setBundleFlag, bundle: index}} key={index}
-                    ></Bundle>
+                        <Bundle 
+                            props={{...item, checked: index === bundleFlag ? true : false, setBundle:setBundleFlag, bundle: index}} key={index}
+                        ></Bundle>
                     ))
                 }
                 </div>

@@ -26,7 +26,7 @@ const Bundle = ({props}) => {
                 {
                     props.items.map((item, index) => (
                         <div className='p-items' key={index}>
-                            <img src={IMG_BAG} alt=''></img>
+                            <img src={item.img} alt=''></img>
                             <div className='p-item-info'>
                                 {
                                     <>

@@ -192,8 +192,9 @@ export const Wrapper = styled.div`
                 border: 0;
                 outline: 0;
                 padding: 5px;
-                background-color: ${p => p.theme.themeColor};
+                background-color: ${p => p.theme.themeColor1};
                 border-radius: 5px;
+                color: white;
             }
         }
     }

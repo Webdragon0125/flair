@@ -21,7 +21,7 @@ const TicketInfo = ({props}) => {
     return (
         <Wrapper isOpen={props.isOpen} mobileBundleFlag={mobileBundleFlag}>
             <div className='usage-mobile'>
-                <div className='from-to'>
+                <div className='from-to' onClick={() => setMobileBundleFlag(true)}>
                     <div className='from'>
                         <p>
                             {props.from.time}
@@ -50,7 +50,7 @@ const TicketInfo = ({props}) => {
                 <div className='price'>
                     <p>value fare</p>
                     <span>${props.price}</span>
-                    <button  onClick={() => setMobileBundleFlag(true)}>Show details</button>
+                    <button onClick={() => setMobileBundleFlag(true)}>Show details</button>
                 </div>
                 <div className='mobile-bundle'>
                     <div className='mobile-bundle-header'>
@@ -91,7 +91,7 @@ const TicketInfo = ({props}) => {
                                         {
                                             item.items.map((item1, index1) => (
                                                 <div className='index' key={index1}>
-                                                    <img src={IMG_BAG}></img>
+                                                    <img src={item1.img}></img>
                                                     <div>
                                                         <p>
                                                             {
