@@ -16,11 +16,12 @@ const TicketInfo = ({props}) => {
 
     const [mobileBundleFlag, setMobileBundleFlag] = useState(false);
     // const [testFlag, setTestFlag] = useState(null);
+    const [selectBundleFlag, setSelectBundleFlag] = useState(1);
 
     return (
         <Wrapper isOpen={props.isOpen} mobileBundleFlag={mobileBundleFlag}>
             <div className='usage-mobile'>
-                <div className='from-to' onClick={() => setMobileBundleFlag(true)}>
+                <div className='from-to'>
                     <div className='from'>
                         <p>
                             {props.from.time}
@@ -49,6 +50,7 @@ const TicketInfo = ({props}) => {
                 <div className='price'>
                     <p>value fare</p>
                     <span>${props.price}</span>
+                    <button  onClick={() => setMobileBundleFlag(true)}>Show details</button>
                 </div>
                 <div className='mobile-bundle'>
                     <div className='mobile-bundle-header'>
@@ -71,7 +73,7 @@ const TicketInfo = ({props}) => {
                     <div className='mobile-bundle-body'>
                         {
                             BUNDLE.map((item, index) => (
-                                <div className='mobile-bundle-body-items' key={index} style={{borderTop: '3px solid '+item.color,}} onClick={() => props.setFlag(props.bundleFlag)}>
+                                <div className='mobile-bundle-body-items' key={index} style={{borderTop: '3px solid '+item.color,}} onClick={() => setSelectBundleFlag(index)}>
                                     <button style={{display: item.recommend ? 'block' : 'none'}}>recommend</button>
                                     <div className='header'>
                                         <div className='left'>
@@ -82,7 +84,7 @@ const TicketInfo = ({props}) => {
                                                 <p>{item.fee.flag === 0 ? 'no fee' : '+$'+item.fee.pp}</p>
                                                 <span>per person</span>
                                             </div>
-                                            <img src={index === props.bundleFlag ? IMG_CHECKED : IMG_UNCHECKED}></img>
+                                            <img src={index === selectBundleFlag ? IMG_CHECKED : IMG_UNCHECKED}></img>
                                         </div>
                                     </div>
                                     <div className='body'>

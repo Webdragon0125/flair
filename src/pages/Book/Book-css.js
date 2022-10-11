@@ -53,28 +53,4 @@ export const Wrapper = styled.div`
             }
         }
     }
-    .annunciation {
-        & > div:nth-child(1) {
-            max-width: ${p => p.theme.maxWidth};
-            margin: 20px auto;
-            @media screen and (max-width: 768px) {
-                padding: 20px 50px;
-                text-align: center;
-            }
-            .ann-index {
-                & p:nth-child(1) {
-                    font-size: 30px;
-                    margin: 20px 0;
-                }
-                & p:nth-child(2) {
-                    line-height: 20px;
-                    a {
-                        color: ${p => p.theme.themeColor1};
-                        text-decoration: none;
-                    }
-                }
-            }
-            margin-bottom: 100px;
-        }
-    }
 `;

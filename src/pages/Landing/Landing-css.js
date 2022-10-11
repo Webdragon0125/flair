@@ -45,6 +45,7 @@ export const Wrapper = styled.div`
       @media screen and (max-width: 600px) {
         display: flex;
         justify-content: center;
+        align-items: center;
       }
       & > div:nth-child(1) {
         width: 100%;
@@ -68,6 +69,12 @@ export const Wrapper = styled.div`
           width: 90%;
           justify-content: space-between;
         }
+
+        @media screen and (max-width: 500px) {
+          width: auto;
+          margin-bottom: 20px;
+        }
+
         .trip-kind {
           display: flex;
           justify-content: center;
@@ -81,19 +88,20 @@ export const Wrapper = styled.div`
           }
           select {
             border: 0;
-            font-size: 18px;
             outline: 0;
             border-bottom: 1px solid black;
             box-shadow: 1px 1px 2px 2px rgb(0 0 0 / 40%);
             border-radius: 5px;
-            padding: 10px 20px;
+            
             font-family: 'avatar-bold';
             font-size: 30px;
             option {
               background-color: transparent;
             }
+            padding: 10px 20px;
             @media screen and (max-width: 500px) {
-              font-size: 25px;
+              padding: 5px;
+              font-size: 20px;
             }
           }
         }
@@ -224,7 +232,6 @@ export const Wrapper = styled.div`
             outline: none;
             position: relative;
             padding: 10px;
-            
           }
 
         button::before {

@@ -172,6 +172,10 @@ const Landing = () => {
                         fontSize: '20px',
                       }
                     },
+                    '& .MuiInputLabel-shrink': {
+                      fontSize: '20px !important',
+                      fontFamily: 'avatar-bold',
+                    },
                     '& .MuiInputLabel-root': {
                       fontSize: '30px',
                       fontFamily: 'avatar-bold',
@@ -197,6 +201,10 @@ const Landing = () => {
                       '@media screen and (max-width: 500px)': {
                         fontSize: '20px',
                       }
+                    },
+                    '& .MuiInputLabel-shrink': {
+                      fontSize: '20px !important',
+                      fontFamily: 'avatar-bold',
                     },
                     '& .MuiInputLabel-root': {
                       fontSize: '30px',

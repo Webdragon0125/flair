@@ -10,6 +10,8 @@ import { BUNDLE } from "../../constant/BUNDLE";
 export const Wrapper = styled.div`
     margin: auto;
     .usage-mobile {
+        padding: 20px;
+        position: relative;
         .mobile-bundle {
             position: fixed;
             right: 0;
@@ -20,6 +22,7 @@ export const Wrapper = styled.div`
             overflow: auto;
             transition: all .3s;
             top: ${p => p.mobileBundleFlag ? '0' : '100vh'};
+            z-index: 101;
             
             .mobile-bundle-header {
                 box-shadow: 0 0 10px #0003;
@@ -66,7 +69,8 @@ export const Wrapper = styled.div`
                         padding: 10px 20px;
                         border-radius: 20px;
                         top: -20px;
-                        left: calc(50% - 50px);
+                        left: calc(50% - 60px);
+                        font-size: 18px;
                     }
                     .header {
                         padding: 10px;
@@ -76,8 +80,8 @@ export const Wrapper = styled.div`
                         border-bottom: 2px dotted ${p => p.theme.borderColor1};
                         .left {
                             p {
-                                color: ${p => p.theme.themeColor1};
-                                font-size: 12px;
+                                  /* color: ${p => p.theme.themeColor1}; */
+                                font-size: 18px;
                             }
                         }
                         .right {
@@ -180,6 +184,16 @@ export const Wrapper = styled.div`
                 color: ${p => p.theme.themeColor1};
                 font-size: 20px;
                 font-family: 'avatar-bold';
+            }
+            button {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                border: 0;
+                outline: 0;
+                padding: 5px;
+                background-color: ${p => p.theme.themeColor};
+                border-radius: 5px;
             }
         }
     }

@@ -6,6 +6,9 @@ export const Wrapper = styled.div`
     }
     position: relative;
     width: 200px;
+    @media screen and (max-width: 500px) {
+        width: auto;
+    }
     .select-body {
         display: flex;
         justify-content: flex-end;
@@ -35,7 +38,7 @@ export const Wrapper = styled.div`
             left: -200px;
         }
         @media screen and (max-width: 500px){
-            left: -300px;
+            left: -200px;
         }
         @media screen and (max-width: 364px){
             left: -200px;

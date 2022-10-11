@@ -19,6 +19,7 @@ import { ABC_BLOCK, DEF_BLOCK } from '../../constant/SEAT_MAP';
 
 // Styled componets
 import { Wrapper, Tickets, Priority } from './SeatSelect-css';
+import Announ from '../../components/Announ/Announ';
 
 // Images
 
@@ -205,18 +206,7 @@ const SeatSelect = () => {
                     <Link to='/travelflex' className='continue'>passenger info</Link>
                 </div>
             </div>
-            <div className='anoun'>
-                <div>
-                    <p className='bold'>Legal Notice</p>
-                    <p className='thin'>
-                        Prices are listed by person, in the original currency their reservation was made. Please <Link to='#'>click here</Link> for information on our policies, regulations and baggage fees. Prices on our website are valid if you purchase services in the same session. If you log off our website, prices may be different next time you log on. Our flight schedules are subject to change due to evolving circumstances related on COVID-19
-                    </p>
-                    <p className='bold'>Passport Requirement</p>
-                    <p className='thin'>
-                        RPassengers are responsible for obtaining valid travel documents (passport, visa or other required documents) that comply with the entry and exit requirements for domestic and international flights. Given that entry and exit requirements may change without notice, please consult <a href='www.travel.gc.ca' target='_blank'>www.travel.gc.ca</a> for more information.
-                    </p>
-                </div>
-            </div>
+            <Announ></Announ>
             <Footer></Footer>
         </Wrapper>
     )

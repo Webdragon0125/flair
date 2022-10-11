@@ -14,6 +14,8 @@ import { PLANTICKETS } from '../../constant/PLANTICKETS';
 // Images
 import IMG_PREV from '../../assets/swiper/prev.png';
 import IMG_NEXT from '../../assets/swiper/next.png';
+import IMG_LEFT from '../../assets/direct/left.png';
+import IMG_RIGHT from '../../assets/direct/right.png';
 
 const PlanTickets = () => {
 
@@ -95,22 +97,26 @@ const Wrapper = styled.div`
         }
         .control-swiper {
             position: absolute;
-            width: 30px;
             height: 30px;
+            z-index: 10;
         }
         .control-swiper.prev {
             left: 30px;
             top: calc(50% - 15px);
-            @media screen and (max-width: 450px) {
-                display: none;
+            @media screen and (max-width: 500px) {
+                /* display: none; */
+                content: url(${IMG_LEFT});
+                left: 10px;
             }
         }
     
         .control-swiper.next {
             right: 30px;
             top: calc(50% - 15px);
-            @media screen and (max-width: 450px) {
-                display: none;
+            @media screen and (max-width: 500px) {
+                /* display: none; */
+                content: url(${IMG_RIGHT});
+                right: 10px;
             }
         }
     }

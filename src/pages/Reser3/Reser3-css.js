@@ -276,28 +276,6 @@ export const Wrapper = styled.div`
             }
         }
     }
-
-    .anoun {
-        & > div:nth-child(1) {
-            max-width: ${p => p.theme.maxWidth};
-            margin: 30px auto;
-            .bold {
-                font-family: 'avatar-bold';
-                font-size: 30px;
-                margin: 30px 0;
-            }
-            .thin {
-                a {
-                    color: ${p => p.theme.themeColor1};
-                    text-decoration: none;
-                }
-            }
-            padding-bottom: 50px;
-            @media screen and (max-width: 550px) {
-                margin: 30px 30px;
-            }
-        }
-    }
 `
 
 export const Tickets = styled.div`
