@@ -21,6 +21,7 @@ export const Wrapper = styled.div`
     .label-container {
         & p:nth-child(1) {
             color: ${p => p.theme.borderColor1};
+            font-size: 14px;
         }
     }
 `

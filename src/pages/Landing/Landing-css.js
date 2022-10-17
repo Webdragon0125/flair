@@ -736,64 +736,83 @@ export const SearchMobileDiv = styled.div`
   transition: all .5s;
   top: ${p => p.flag ? '0' : '100vh'};
   width: 100vw;
-  min-height: 100vh;
   background-color: #f4f4f4;
   z-index: 106;
   
-  .header-theme {
-    background-color: ${p => p.theme.themeColor1};
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 10px;
-    color: white;
-    img {
-      height: 20px;
-    }
-  }
+  & > div:nth-child(1) {
+    min-height: 100vh;
+    position: relative;
 
-  .ticket-type {
-    display: flex;
-    box-shadow: 0 5px 20px -10px #000;
-    margin-bottom: 20px;
-    background-color: white;
-    .return {
-      width: 50%;
+    .search {
+      position: absolute;
+      bottom: 10px;
+      border: 0;
+      outline: 0;
+      left: 20px;
+      width: calc(100vw - 40px);
+      padding: 10px 20px;
+      color: white;
+      background-color: ${p => p.theme.themeColor1};
+      border-radius: 30px;
+      font-size: 16px;
+    }
+
+    .header-theme {
+      background-color: ${p => p.theme.themeColor1};
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      padding: 3px 0;
-      div {
-        display: flex;
-        align-items: center;
-        svg {
-          width: 50px;
-          fill: ${p => p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
-        }
-        height: 50px;
-      }
-      p {
-        color: ${p => p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
+      justify-content: space-between;
+      padding: 10px 10px;
+      color: white;
+      img {
+        height: 20px;
       }
     }
-    .oneway {
-      width: 50%;
+  
+    .ticket-type {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      div {
+      box-shadow: 0 5px 20px -10px #000;
+      margin-bottom: 20px;
+      background-color: white;
+      .return {
+        width: 50%;
         display: flex;
         align-items: center;
-        svg {
-          width: 50px;
-          fill: ${p => !p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
+        justify-content: center;
+        flex-direction: column;
+        padding: 3px 0;
+        div {
+          display: flex;
+          align-items: center;
+          svg {
+            width: 50px;
+            fill: ${p => p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
+          }
+          height: 50px;
         }
-        height: 50px;
+        p {
+          color: ${p => p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
+        }
       }
-      p {
-        color: ${p => !p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
+      .oneway {
+        width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        div {
+          display: flex;
+          align-items: center;
+          svg {
+            width: 50px;
+            fill: ${p => !p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
+          }
+          height: 50px;
+        }
+        p {
+          color: ${p => !p.mobileTypeFlag ? p.theme.themeColor1 : p.theme.borderColor1};
+        }
       }
     }
   }
+  
 `

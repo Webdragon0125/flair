@@ -24,7 +24,7 @@ const MobileLocationSearch = ({ props }) => {
 
             {
                 props.options.sort((a, b) => a.label > b.label ? 1 : -1).filter(item => item.label.toLowerCase().indexOf(searchValue.toLowerCase()) != -1).map(item => (
-                    <div key={item.index} className='list-item'>
+                    <div key={item.index} className='list-item' onClick={() => { props.setPosi(item.index); props.setDisplayFlag(false) }}>
                         <div className="labels">
                             <p>
                                 {
@@ -37,9 +37,13 @@ const MobileLocationSearch = ({ props }) => {
                                 }
                             </p>
                         </div>
-                        <span className="check">
-                            <BsCheck></BsCheck>
-                        </span>
+                        {
+                            props.posi === item.index ? (
+                                <span className="check">
+                                    <BsCheck></BsCheck>
+                                </span>
+                            ) : ''
+                        }
                     </div>
                 ))
             }

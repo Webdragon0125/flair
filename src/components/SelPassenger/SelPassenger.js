@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import { Wrapper } from './SelPassenger-css';
 
@@ -29,11 +29,11 @@ const SelPassenger = () => {
                                 </p>
                                 <div className='p-controller'>
                                     <img src={IMG_MINUS} alt='' onClick={() => {
-                                        if (cntper[0] > 1) setCntper([cntper[0]-1, cntper[1], cntper[2]]);
+                                        if (cntper[0] > 1) setCntper([cntper[0] - 1, cntper[1], cntper[2]]);
                                     }}></img>
                                     <p>{cntper[0]}</p>
                                     <img src={IMG_PLUS} alt='' onClick={() => {
-                                        setCntper([cntper[0]+1, cntper[1], cntper[2]]);
+                                        setCntper([cntper[0] + 1, cntper[1], cntper[2]]);
                                     }}></img>
                                 </div>
                             </div>
@@ -44,11 +44,11 @@ const SelPassenger = () => {
                                 </p>
                                 <div className='p-controller'>
                                     <img src={IMG_MINUS} alt='' onClick={() => {
-                                        if (cntper[1] > 0) setCntper([cntper[0], cntper[1]-1, cntper[2]]);
+                                        if (cntper[1] > 0) setCntper([cntper[0], cntper[1] - 1, cntper[2]]);
                                     }}></img>
                                     <p>{cntper[1]}</p>
                                     <img src={IMG_PLUS} alt='' onClick={() => {
-                                        setCntper([cntper[0], cntper[1]+1, cntper[2]]);
+                                        setCntper([cntper[0], cntper[1] + 1, cntper[2]]);
                                     }}></img>
                                 </div>
                             </div>
@@ -59,11 +59,11 @@ const SelPassenger = () => {
                                 </p>
                                 <div className='p-controller'>
                                     <img src={IMG_MINUS} alt='' onClick={() => {
-                                        if (cntper[2] > 0) setCntper([cntper[0], cntper[1], cntper[2]-1]);
+                                        if (cntper[2] > 0) setCntper([cntper[0], cntper[1], cntper[2] - 1]);
                                     }}></img>
                                     <p>{cntper[2]}</p>
                                     <img src={IMG_PLUS} alt='' onClick={() => {
-                                        setCntper([cntper[0], cntper[1], cntper[2]+1]);
+                                        setCntper([cntper[0], cntper[1], cntper[2] + 1]);
                                     }}></img>
                                 </div>
                             </div>
