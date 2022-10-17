@@ -114,7 +114,7 @@ const Landing = () => {
         <Header props={HEADER} />
         <div className="search-for">
           <div>
-            <h1 class="ml6">
+            <h1 class="ml6" style={{ fontSize: '30px' }}>
               <span className="letter">s</span>
               <span className="letter">e</span>
               <span className="letter">a</span>

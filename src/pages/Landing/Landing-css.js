@@ -131,7 +131,6 @@ export const Wrapper = styled.div`
             font-size: 30px;
           }
           @media screen and (max-width: 500px) {
-            font-size: 25px;
             margin: 30px auto;
           }
         }
