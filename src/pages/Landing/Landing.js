@@ -29,7 +29,8 @@ import MobileLocationSearch from '../../components/MobileLocationSearch/MobileLo
 import MobileCalender from "../../components/MobileCalender/MobileCalender";
 
 // Styled-components
-import { Wrapper, WhereWeFly, SearchMobileDiv } from "./Landing-css";
+import { Wrapper, WhereWeFly, SearchMobileDiv, SunOfBeach } from "./Landing-css";
+
 
 // Images
 import IMG_BACK1 from "../../assets/back1.png";
@@ -45,8 +46,6 @@ import { HEADER } from "../../constant/HEADER";
 import { BEST_DEAL } from "../../constant/BEST_DEAL";
 import { SERVICES } from "../../constant/SERVICES";
 import { CUSTOMERS } from "../../constant/CUSTOMERS";
-
-
 
 const Landing = () => {
 
@@ -366,10 +365,24 @@ const Landing = () => {
         {/**
          * Mobile components End
          */}
-        <div className="sun-of-beach" id='explore-more-deals'>
-          <p className="title"></p>
-          <Link to='/book'><img src={IMG_BACK1} alt=''></img></Link>
-        </div>
+        <SunOfBeach id='explore-more-deals' backImg={IMG_BACK1}>
+          {/* <Link to='/book'><img src={IMG_BACK1} alt=''></img></Link> */}
+          <div className="title-div">
+            <p className="title">
+              sun of a beach!
+            </p>
+            <div>
+              <p>view out summer 2023 schedule</p>
+              <Link to='/book'>book now</Link>
+            </div>
+          </div>
+          <div className="ads-beach">
+            <p>
+              <span>our</span>summer 2023 schedule <span>is here!</span>
+            </p>
+          </div>
+
+        </SunOfBeach>
       </div>
 
 
@@ -426,7 +439,7 @@ const Landing = () => {
           <p>
             We are growing fast. With several exciting routes Flair files to
             popular destinations
-          </p>
+        </p>
           <button> see map </button>
         </div>
       </WhereWeFly>

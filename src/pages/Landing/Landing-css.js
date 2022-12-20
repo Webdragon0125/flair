@@ -470,26 +470,6 @@ export const Wrapper = styled.div`
     }
   }
 
-  .sun-of-beach {
-    max-width: ${p => p.theme.maxWidth};
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    .title {
-      font-size: 20px;
-      font-weight: 700;
-    }
-    img {
-      width: 100%;
-      @media screen and (max-width: 768px) {
-        content: url(${IMG_BACK1_RESP});
-      }
-    }
-  }
-
   .best-deals {
     display: flex;
     flex-direction: column;
@@ -814,4 +794,100 @@ export const SearchMobileDiv = styled.div`
     }
   }
   
+`
+
+export const SunOfBeach = styled.div`
+  max-width: ${p => p.theme.maxWidth};
+  position: relative;
+  gap: 30px;
+  .title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+  background-image: url(${p => p.backImg});
+  width: 100%;
+  height: 500px;
+  @media screen and (max-width: 780px) {
+    height: calc(100vh - 284px);
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 780px) {
+    height: calc(100vh - 325px);
+  }
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 100% 100%;
+  .title-div {
+    position: absolute;
+    /* width: min-content; */
+    float: right;
+    height: min-content;
+    bottom: 40px;
+    left: 50px;
+    @media screen and (max-width: 780px) {
+      top: 30px;
+      right: 30px;
+      text-align: center;
+    }
+    .title {
+      font-family: 'avatar-bold';
+      font-size: 60px;
+      @media screen and (max-width: 780px) {
+        font-size: 40px;
+      }
+    }
+    div {
+      @media screen and (max-width: 780px) {
+        display: none;
+      }
+      p {
+        font-family: 'avatar-bold';
+      }
+      font-size: 30px;
+      a {
+        font-family: 'avatar-bold';
+        background-color: ${p => p.theme.themeColor1};
+        color: white;
+        padding: 5px 20px;
+        text-decoration: none;
+        border-radius: 50px;
+        letter-spacing: 2px;
+      }
+    }
+  }
+
+  .ads-beach {
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    width: 250px;
+    padding: 20px;
+    border-radius: 50%;
+    text-align: center;
+    @media screen and (max-width: 780px) {
+      width: calc(100vw - 60px);
+      height: 100px;
+      border-radius: 5px;
+      height: auto;
+      bottom: 20px;
+      padding: 0px;
+    }
+    p {
+      font-family: 'avatar-bold';
+      font-size: 40px;
+      span {
+        font-family: 'avatar-bold';
+        white-space: block;
+        font-size: 25px;
+        display: inherit;
+      }
+    }
+    background-color: ${p => p.theme.themeColor};
+  }
+  /* img {
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      content: url(${IMG_BACK1_RESP});
+    }
+  } */
 `
