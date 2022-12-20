@@ -807,6 +807,7 @@ export const SunOfBeach = styled.div`
   background-image: url(${p => p.backImg});
   width: 100%;
   height: 500px;
+  margin: auto;
   @media screen and (max-width: 780px) {
     height: calc(100vh - 284px);
     margin-top: 30px;
